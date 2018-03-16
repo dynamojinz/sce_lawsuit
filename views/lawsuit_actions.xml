@@ -1,0 +1,52 @@
+<odoo>
+  <data>
+    <!-- actions opening views on models -->
+    <!--<record model="ir.actions.act_window" id="sce_landinfo.action_window_company">-->
+      <!--<field name="name">Company Management</field>-->
+      <!--<field name="res_model">sce_landinfo.subcompany</field>-->
+      <!--<field name="view_mode">tree,form</field>-->
+    <!--</record>-->
+
+    <!--<record model="ir.actions.act_window" id="sce_landinfo.action_window_user">-->
+      <!--<field name="name">User Management</field>-->
+      <!--<field name="res_model">res.users</field>-->
+      <!--<field name="view_mode">tree,form</field>-->
+    <!--</record>-->
+
+    <record model="ir.actions.act_window" id="sce_lawsuit.action_window_all">
+      <field name="name">Lawsuitss</field>
+      <field name="res_model">sce_lawsuit.lawsuit</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="sce_lawsuit.action_window_add">
+      <field name="name">action_window_submit</field>
+      <field name="res_model">sce_lawsuit.lawsuit</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="sce_lawsuit.action_window_wechat">
+      <field name="name">Wechat plugin</field>
+      <field name="res_model">sce_wechat.wechat</field>
+      <field name="view_mode">form</field>
+      <field name="res_id">2</field>
+      <field name="context">{'form_view_ref': 'sce_wechat.form_2_dim_code'}</field>
+      <field name="domain">[('is_master','=',True)]</field>
+    </record>
+
+    <!-- server action to the one above -->
+    <record model="ir.actions.server" id="sce_lawsuit.action_server">
+      <field name="name">Company Lawsuits</field>
+      <field name="model_id" ref="model_sce_lawsuit_lawsuit"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "name": "Company Lawsuits",
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": "sce_lawsuit.land",
+        }
+      </field>
+    </record>
+  </data>
+</odoo>

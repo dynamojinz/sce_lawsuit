@@ -1,0 +1,178 @@
+<odoo>
+    <data>
+         <template id="land_compare"> 
+             <t t-call="web.layout">
+                 <t t-set="html_data" t-value="{'style': 'height: 100%;'}"/>
+                 <t t-set="title" t-value="'Compare History Versions'"/>
+                 <t t-set="head">
+                     <t t-call-assets="web.assets_common" t-js="true"/>
+                     <t t-call-assets="web.assets_backend" t-js="true"/>
+                 </t>
+                 <t t-set="body_classname" t-value="'container'"/>
+
+         <div class="o_land_compare">
+             <h1 align="center">Compare Land Versions</h1> 
+             <table border="1" align="center" colspace="0">
+                 <tr>
+                     <th>版本名称</th>
+                     <th t-foreach="objects" t-as="object"> 
+                         <t t-esc="object.name"/>V<span t-field="object.version"/> 
+                     </th>
+                 </tr>
+                 <!--<t t-foreach="fields" t-as="field">-->
+                 <t t-if="fields_check['name']==1">
+                     <t t-set="bgcolor" t-value="'white'"/>
+                 </t>
+                 <t t-if="fields_check['name']==0">
+                     <t t-set="bgcolor" t-value="'red'"/>
+                 </t>
+                 <tr t-att-bgcolor="bgcolor">
+                     <td>项目名称</td>
+                     <td t-foreach="objects" t-as="object"> 
+                         <span t-field="object.name"/> 
+                     </td>
+                 </tr>
+                 <!--</t>-->
+                 <t t-if="fields_check['land_type']==1">
+                     <t t-set="bgcolor" t-value="'white'"/>
+                 </t>
+                 <t t-if="fields_check['land_type']==0">
+                     <t t-set="bgcolor" t-value="'red'"/>
+                 </t>
+                 <tr t-att-bgcolor="bgcolor">
+                     <td>用地性质</td>
+                     <td t-foreach="objects" t-as="object"> 
+                         <span t-field="object.land_type"/> 
+                     </td>
+                 </tr>
+                 <t t-if="fields_check['floor_area']==1">
+                     <t t-set="bgcolor" t-value="'white'"/>
+                 </t>
+                 <t t-if="fields_check['floor_area']==0">
+                     <t t-set="bgcolor" t-value="'red'"/>
+                 </t>
+                 <tr t-att-bgcolor="bgcolor">
+                     <td>占地面积(㎡)</td>
+                     <td t-foreach="objects" t-as="object"> 
+                         <span t-field="object.floor_area"/> 
+                     </td>
+                 </tr>
+                 <t t-if="fields_check['plot_ratio']==1">
+                     <t t-set="bgcolor" t-value="'white'"/>
+                 </t>
+                 <t t-if="fields_check['plot_ratio']==0">
+                     <t t-set="bgcolor" t-value="'red'"/>
+                 </t>
+                 <tr t-att-bgcolor="bgcolor">
+                     <td>容积率</td>
+                     <td t-foreach="objects" t-as="object"> 
+                         <span t-field="object.plot_ratio"/> 
+                     </td>
+                 </tr>
+                 <t t-if="fields_check['volume_area']==1">
+                     <t t-set="bgcolor" t-value="'white'"/>
+                 </t>
+                 <t t-if="fields_check['volume_area']==0">
+                     <t t-set="bgcolor" t-value="'red'"/>
+                 </t>
+                 <tr t-att-bgcolor="bgcolor">
+                     <td>计容建筑面积(㎡)</td>
+                     <td t-foreach="objects" t-as="object"> 
+                         <span t-field="object.volume_area"/> 
+                     </td>
+                 </tr>
+                 <t t-if="fields_check['residential_area']==1">
+                     <t t-set="bgcolor" t-value="'white'"/>
+                 </t>
+                 <t t-if="fields_check['residential_area']==0">
+                     <t t-set="bgcolor" t-value="'red'"/>
+                 </t>
+                 <tr t-att-bgcolor="bgcolor">
+                     <td>住宅面积(㎡)</td>
+                     <td t-foreach="objects" t-as="object"> 
+                         <span t-field="object.residential_area"/> 
+                     </td>
+                 </tr>
+                 <t t-if="fields_check['bussiness_area']==1">
+                     <t t-set="bgcolor" t-value="'white'"/>
+                 </t>
+                 <t t-if="fields_check['bussiness_area']==0">
+                     <t t-set="bgcolor" t-value="'red'"/>
+                 </t>
+                 <tr t-att-bgcolor="bgcolor">
+                     <td>商业面积(㎡)</td>
+                     <td t-foreach="objects" t-as="object"> 
+                         <span t-field="object.bussiness_area"/> 
+                     </td>
+                 </tr>
+                 <t t-if="fields_check['office_area']==1">
+                     <t t-set="bgcolor" t-value="'white'"/>
+                 </t>
+                 <t t-if="fields_check['office_area']==0">
+                     <t t-set="bgcolor" t-value="'red'"/>
+                 </t>
+                 <tr t-att-bgcolor="bgcolor">
+                     <td>办公面积(㎡)</td>
+                     <td t-foreach="objects" t-as="object"> 
+                         <span t-field="object.office_area"/> 
+                     </td>
+                 </tr>
+                 <t t-if="fields_check['other_area']==1">
+                     <t t-set="bgcolor" t-value="'white'"/>
+                 </t>
+                 <t t-if="fields_check['other_area']==0">
+                     <t t-set="bgcolor" t-value="'red'"/>
+                 </t>
+                 <tr t-att-bgcolor="bgcolor">
+                     <td>其他面积(㎡)</td>
+                     <td t-foreach="objects" t-as="object"> 
+                         <span t-field="object.office_area"/> 
+                     </td>
+                 </tr>
+                 <t t-if="fields_check['site_situation']==1">
+                     <t t-set="bgcolor" t-value="'white'"/>
+                 </t>
+                 <t t-if="fields_check['site_situation']==0">
+                     <t t-set="bgcolor" t-value="'red'"/>
+                 </t>
+                 <tr t-att-bgcolor="bgcolor">
+                     <td>现场状况</td>
+                     <td t-foreach="objects" t-as="object"> 
+                         <span t-field="object.site_situation"/> 
+                     </td>
+                 </tr>
+                 <t t-if="fields_check['transfer_type']==1">
+                     <t t-set="bgcolor" t-value="'white'"/>
+                 </t>
+                 <t t-if="fields_check['transfer_type']==0">
+                     <t t-set="bgcolor" t-value="'red'"/>
+                 </t>
+                 <tr t-att-bgcolor="bgcolor">
+                     <td>转让方式</td>
+                     <td t-foreach="objects" t-as="object"> 
+                         <span t-field="object.transfer_type"/> 
+                     </td>
+                 </tr>
+                 <t t-foreach="fields" t-as="field">
+                     <t t-if="fields_check[field[0]]==1">
+                         <t t-set="bgcolor" t-value="'white'"/>
+                     </t>
+                     <t t-if="fields_check[field[0]]==0">
+                         <t t-set="bgcolor" t-value="'red'"/>
+                     </t>
+                     <tr t-att-bgcolor="bgcolor">
+                         <td><t t-esc="field[1]"/></td>
+                         <td t-foreach="objects" t-as="object"> 
+                             <t t-esc="object[field[0]]"/> 
+                         </td>
+                     </tr>
+                 </t>
+             </table>
+         </div>
+     </t>
+         </template>
+         <template id="notify_confirm">
+             <div> Test mail</div>
+         </template>
+    </data>
+</odoo>

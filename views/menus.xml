@@ -1,0 +1,34 @@
+<odoo>
+  <data>
+    <!-- Top menu item -->
+    <menuitem name="Lawsuit" id="sce_lawsuit.menu_root" groups="sce_lawsuit.lawsuit_user"/>
+    <!-- menu categories -->
+    <menuitem name="SCE Coperation" id="sce_lawsuit.menu_1" parent="sce_lawsuit.menu_root"/>
+    <menuitem name="Configuration" id="sce_lawsuit.menu_2"
+              groups="sce_lawsuit.lawsuit_admin"
+              parent="sce_lawsuit.menu_root"/>
+    <!--
+    <menuitem name="Menu 2" id="sce_landinfo.menu_2" parent="sce_landinfo.menu_root"/>
+    -->
+    <!-- actions -->
+    <menuitem name="All Lawsuits" id="sce_lawsuit.menu_1_list" parent="sce_lawsuit.menu_1"
+              groups="sce_lawsuit.lawsuit_manager"
+              action="sce_lawsuit.action_window_all"/>
+          
+    <!--<menuitem name="Company Lawsuits" id="sce_lawsuit.menu_2_list" parent="sce_lawsuit.menu_1"-->
+              <!--action="sce_lawsuit.action_server"/>-->
+
+    <menuitem name="My Lawsuits" id="sce_lawsuit.menu_3_list" parent="sce_lawsuit.menu_1"
+              action="sce_lawsuit.action_window_add"/>
+
+    <menuitem name="Wechat plugin" id="sce_lawsuit.menu_wechat" parent="sce_lawsuit.menu_1"
+              action="sce_lawsuit.action_window_wechat"/>
+
+    <!--<menuitem name="Company Management" id="sce_lawsuit.menu_6_list" parent="sce_lawsuit.menu_2"-->
+              <!--action="sce_lawsuit.action_window_company"/>-->
+    <!--
+    <menuitem name="Server to list" id="sce_landinfo" parent="sce_landinfo.menu_2"
+              action="sce_landinfo.action_server"/>
+    -->
+  </data>
+</odoo>

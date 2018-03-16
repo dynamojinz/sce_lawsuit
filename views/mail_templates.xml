@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record forcecreate="true" id="ir_cron_notify_update_action" model="ir.cron">
+            <field name="name">Activity: Update Land Info</field>
+            <field name="model_id" ref="model_sce_landinfo_land"/>
+            <field name="state">code</field>
+            <field name="code">model.process_update_notify()</field>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="interval_number">1</field>
+            <field name="interval_type">hours</field>
+            <field name="numbercall">-1</field>
+            <!--<field eval="false" name="doall"/>-->
+        </record>
+
+        <!--<record id="ir_cron_module_update_notification" model="ir.cron">-->
+            <!--<field name="name">Publisher: Update Notification</field>-->
+            <!--<field name="model_id" ref="model_publisher_warranty_contract"/>-->
+            <!--<field name="state">code</field>-->
+            <!--<field name="code">model.update_notification(None)</field>-->
+            <!--<field name="user_id" ref="base.user_root" />-->
+            <!--<field name="interval_number">1</field>-->
+            <!--<field name="interval_type">weeks</field>-->
+            <!--<field name="numbercall">-1</field>-->
+            <!--<field name="nextcall" eval="(DateTime.now() + timedelta(days=7)).strftime('%Y-%m-%d %H:%M:%S')" />-->
+            <!--<field eval="False" name="doall" />-->
+            <!--<field name="priority">1000</field>-->
+        <!--</record>-->
+
+        <!--[> Admin should not receive emails at creation <]-->
+        <record id="base.user_root" model="res.users">
+            <field name="notification_type">inbox</field>
+        </record>
+
+        <!--[> Catchall Email Alias <]-->
+        <!--<record id="icp_mail_catchall_alias" model="ir.config_parameter">-->
+            <!--<field name="key">mail.catchall.alias</field>-->
+            <!--<field name="value">catchall</field>-->
+        <!--</record>-->
+
+        <!--[> Bounce Email Alias <]-->
+        <!--<record id="icp_mail_bounce_alias" model="ir.config_parameter">-->
+            <!--<field name="key">mail.bounce.alias</field>-->
+            <!--<field name="value">bounce</field>-->
+        <!--</record>-->
+
+        <!--[> Discussion subtype for messaging / Chatter <]-->
+        <!--<record id="mt_comment" model="mail.message.subtype">-->
+            <!--<field name="name">Discussions</field>-->
+            <!--<field name="sequence" eval="0"/>-->
+        <!--</record>-->
+        <!--<record id="mt_note" model="mail.message.subtype">-->
+            <!--<field name="name">Note</field>-->
+            <!--<field name="default" eval="False"/>-->
+            <!--<field name="internal" eval="True"/>-->
+            <!--<field name="sequence" eval="100"/>-->
+        <!--</record>-->
+        <!--<record id="mt_activities" model="mail.message.subtype">-->
+            <!--<field name="name">Activities</field>-->
+            <!--<field name="default" eval="True"/>-->
+            <!--<field name="internal" eval="True"/>-->
+            <!--<field name="sequence" eval="90"/>-->
+        <!--</record>-->
+    <!--</data>-->
+    </data>
+</odoo>

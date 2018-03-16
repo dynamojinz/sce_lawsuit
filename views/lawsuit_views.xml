@@ -1,0 +1,110 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <!--<record model="ir.ui.view" id="sce_landinfo.company_list">-->
+      <!--<field name="name">Company List</field>-->
+      <!--<field name="model">sce_landinfo.subcompany</field>-->
+      <!--<field name="arch" type="xml">-->
+        <!--<tree>-->
+          <!--<field name="name"/>-->
+          <!--<field name="land_manager_id"/>-->
+          <!--<field name="general_manager_id"/>-->
+          <!--<field name="user_ids"/>-->
+        <!--</tree>-->
+      <!--</field>-->
+    <!--</record>-->
+
+    <!--<record model="ir.ui.view" id="sce_landinfo.user_list">-->
+      <!--<field name="name">User List</field>-->
+      <!--<field name="model">res.users</field>-->
+      <!--<field name="arch" type="xml">-->
+        <!--<tree>-->
+          <!--<field name="name"/>-->
+          <!--<field name="login"/>-->
+        <!--</tree>-->
+      <!--</field>-->
+    <!--</record>-->
+
+    <record model="ir.ui.view" id="sce_lawsuit.list">
+      <field name="name">Lawsuit list</field>
+      <field name="model">sce_lawsuit.lawsuit</field>
+      <field name="arch" type="xml">
+        <tree default_order="create_date">
+          <field name="name"/>
+          <field name="create_date"/>
+          <field name="write_date"/>
+          <!--<field name="response_user_id"/>-->
+        </tree>
+      </field>
+    </record>
+
+	
+    <!--<record model="ir.ui.view" id="sce_landinfo.form_owned">-->
+      <!--<field name="name">land_form_submit</field>-->
+      <!--<field name="model">sce_landinfo.land</field>-->
+      <!--<field name="inherit_id" ref="sce_landinfo.form"/>-->
+      <!--<field name="arch" type="xml">-->
+          <!--<xpath expr="//button[@name='action_cancel']" position="after">-->
+              <!--<button name="action_submit" type="object" string="Submit" states="draft" class="oe_highlight" -->
+                  <!--confirm="Going to submit this version info to confirmation?"/>-->
+          <!--</xpath>-->
+      <!--</field>-->
+    <!--</record>-->
+
+    <record model="ir.ui.view" id="sce_lawsuit.form">
+      <field name="name">Lawsuit form</field>
+      <field name="model">sce_lawsuit.lawsuit</field>
+      <field name="arch" type="xml">
+          <form>
+              <header>
+                  <field name="state" widget="statusbar" readonly="1"/>
+              </header>
+              <sheet>
+                  <group>
+                      <group>
+                          <field name="name" string="land name"/>
+                          <field name="project_name"/>
+                      </group>
+                      <group>
+                          <field name="state"/>
+                      </group>
+                  </group>
+                  <group>
+                      <field name="region"/>
+                  </group>
+                  <group>
+                      <field name="cause"/>
+                  </group>
+                  <separator string="Arbitration State" />
+                  <group>
+                      <group>
+                          <field name="arbi_operator"/>
+                      </group>
+                      <group>
+                          <field name="arbi_claimant"/>
+                          <field name="arbi_respondent"/>
+                      </group>
+                  </group>
+                  <group>
+                      <field name="arbi_claim"/>
+                  </group>
+                  <group>
+                      <group>
+                          <field name="arbi_regist_date"/>
+                      </group>
+                      <group>
+                          <field name="arbi_open_date"/>
+                      </group>
+                  </group>
+                  <group>
+                      <field name="arbi_is_settled"/>
+                  </group>
+                  <group>
+                      <field name="arbi_result"/>
+                  </group>
+              </sheet>
+          </form>
+      </field>
+    </record>
+  </data>
+</odoo>

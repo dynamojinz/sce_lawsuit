@@ -1,0 +1,13 @@
+<odoo>
+    <data>
+        <record model="res.groups" id="lawsuit_user">
+            <field name="name">Lawsuit / User</field>
+        </record>
+        <record model="res.groups" id="lawsuit_admin">
+            <field name="name">Lawsuit / Administrator</field>
+        </record>
+        <record model="res.groups" id="lawsuit_manager">
+            <field name="name">Lawsuit / Manager</field>
+        </record>
+    </data>
+</odoo>

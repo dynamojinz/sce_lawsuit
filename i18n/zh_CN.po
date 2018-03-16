@@ -1,0 +1,889 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sce_landinfo
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-01-04 10:49+0000\n"
+"PO-Revision-Date: 2018-01-04 18:51+0800\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 2.0.4\n"
+"Last-Translator: \n"
+"Language: zh\n"
+
+#. module: sce_landinfo
+#: model:ir.actions.server,name:sce_landinfo.ir_cron_notify_update_action_ir_actions_server
+#: model:ir.cron,cron_name:sce_landinfo.ir_cron_notify_update_action
+#: model:ir.cron,name:sce_landinfo.ir_cron_notify_update_action
+msgid "Activity: Update Land Info"
+msgstr "活动：更新项目信息"
+
+#. module: sce_landinfo
+#: code:addons/sce_landinfo/controllers/controllers.py:22
+#: code:addons/sce_landinfo/controllers/controllers.py:56
+#: code:addons/sce_landinfo/models/land.py:35
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_agent_introduction
+#, python-format
+msgid "Agent Introduction"
+msgstr "中介介绍"
+
+#. module: sce_landinfo
+#: model:ir.ui.menu,name:sce_landinfo.menu_1_list
+msgid "All Lands"
+msgstr "所有项目"
+
+#. module: sce_landinfo
+#: selection:sce_landinfo.land,transfer_type:0
+msgid "Asset transfer"
+msgstr "资产转让"
+
+#. module: sce_landinfo
+#: model:ir.ui.view,arch_db:sce_landinfo.form
+#: model:ir.ui.view,arch_db:sce_landinfo.form_confirm
+#: model:ir.ui.view,arch_db:sce_landinfo.form_owned
+msgid "Attachments"
+msgstr "附件"
+
+#. module: sce_landinfo
+#: code:addons/sce_landinfo/controllers/controllers.py:27
+#: code:addons/sce_landinfo/controllers/controllers.py:59
+#: code:addons/sce_landinfo/models/land.py:40
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_base_judgement
+#, python-format
+msgid "Base Judgement"
+msgstr "项目基本判断"
+
+#. module: sce_landinfo
+#: code:addons/sce_landinfo/controllers/controllers.py:12
+#: code:addons/sce_landinfo/models/land.py:25
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_bussiness_area
+#, python-format
+msgid "Bussiness Area(m2)"
+msgstr "商业面积(㎡)"
+
+#. module: sce_landinfo
+#: selection:sce_landinfo.land,land_type:0
+msgid "Bussiness land"
+msgstr "商业用地"
+
+#. module: sce_landinfo
+#: selection:sce_landinfo.land,land_type:0
+msgid "Bussiness residential land"
+msgstr "商住用地"
+
+#. module: sce_landinfo
+#: model:ir.ui.view,arch_db:sce_landinfo.form_owned
+msgid "Cancel Submit"
+msgstr "取消申请"
+
+#. module: sce_landinfo
+#: model:ir.ui.view,arch_db:sce_landinfo.form_owned
+msgid "Cancel this submittion?"
+msgstr "确认要取消这次审批申请吗？"
+
+#. module: sce_landinfo
+#: selection:sce_landinfo.land,transfer_type:0
+msgid "Collaborate"
+msgstr "合作"
+
+#. module: sce_landinfo
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_company_id
+msgid "Company"
+msgstr "公司"
+
+#. module: sce_landinfo
+#: model:ir.ui.menu,name:sce_landinfo.menu_2_list
+msgid "Company Lands"
+msgstr "公司土地信息"
+
+#. module: sce_landinfo
+#: model:ir.actions.act_window,name:sce_landinfo.action_window_company
+#: model:ir.ui.menu,name:sce_landinfo.menu_6_list
+msgid "Company Management"
+msgstr "公司管理"
+
+#. module: sce_landinfo
+#: model:ir.ui.view,arch_db:sce_landinfo.land_compare
+msgid "Compare Land Versions"
+msgstr "项目信息版本对比"
+
+#. module: sce_landinfo
+#: model:ir.ui.menu,name:sce_landinfo.menu_2
+msgid "Configuration"
+msgstr "配置"
+
+#. module: sce_landinfo
+#: model:ir.ui.view,arch_db:sce_landinfo.form_confirm
+msgid "Confirm"
+msgstr "审批"
+
+#. module: sce_landinfo
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_confirm_date_format
+msgid "Confirm Date Format"
+msgstr "审批日期"
+
+#. module: sce_landinfo
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_confirm_datetime
+msgid "Confirm Datetime"
+msgstr "审批时间"
+
+#. module: sce_landinfo
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_confirm_user_id
+msgid "Confirm User"
+msgstr "审批人"
+
+#. module: sce_landinfo
+#: model:ir.actions.act_window,name:sce_landinfo.action_window_confirm
+msgid "Confirm lands"
+msgstr "项目信息审批"
+
+#. module: sce_landinfo
+#: model:ir.ui.view,arch_db:sce_landinfo.form_confirm
+msgid "Confirm this version of land info?"
+msgstr "确认要审批土地信息吗？(审批后将永久存档)"
+
+#. module: sce_landinfo
+#: selection:sce_landinfo.land,state:0
+msgid "Confirmed"
+msgstr "已审批"
+
+#. module: sce_landinfo
+#: model:ir.ui.menu,name:sce_landinfo.menu_4_list
+msgid "Confirming Lands"
+msgstr "待我审批的项目"
+
+#. module: sce_landinfo
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_core_bus_term_report
+msgid "Core Bus Term Report"
+msgstr "核心商务条件"
+
+#. module: sce_landinfo
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_core_bus_term_report_fname
+msgid "Core Bus Term Report Fname"
+msgstr "核心商务条件文件名"
+
+#. module: sce_landinfo
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_create_date_format
+msgid "Create Date Format"
+msgstr "录入日期"
+
+#. module: sce_landinfo
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_compare_create_uid
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_create_uid
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_subcompany_create_uid
+msgid "Created by"
+msgstr "创建人"
+
+#. module: sce_landinfo
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_compare_create_date
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_create_date
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_subcompany_create_date
+msgid "Created on"
+msgstr "创建时间"
+
+#. module: sce_landinfo
+#: code:addons/sce_landinfo/controllers/controllers.py:23
+#: code:addons/sce_landinfo/controllers/controllers.py:57
+#: code:addons/sce_landinfo/models/land.py:36
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_debt_situation
+#, python-format
+msgid "Debt Situation"
+msgstr "负债情况"
+
+#. module: sce_landinfo
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_compare_display_name
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_display_name
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_subcompany_display_name
+msgid "Display Name"
+msgstr "显示名称"
+
+#. module: sce_landinfo
+#: selection:sce_landinfo.land,state:0
+msgid "Draft"
+msgstr "编缉版本"
+
+#. module: sce_landinfo
+#: code:addons/sce_landinfo/controllers/controllers.py:24
+#: code:addons/sce_landinfo/models/land.py:37
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_estimate_sale_price
+#, python-format
+msgid "Estimate Sale Price(Yi Yuan)"
+msgstr "预计售价(元/㎡)"
+
+#. module: sce_landinfo
+#: code:addons/sce_landinfo/controllers/controllers.py:57
+#, python-format
+msgid "Estimate Sale Price(Yuan/m2)"
+msgstr "预计售价(元/㎡)"
+
+#. module: sce_landinfo
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_exploration_report
+msgid "Exploration Report"
+msgstr "踏勘报告"
+
+#. module: sce_landinfo
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_exploration_report_fname
+msgid "Exploration Report Fname"
+msgstr "踏勘报告文件名"
+
+#. module: sce_landinfo
+#: code:addons/sce_landinfo/controllers/controllers.py:8
+#: code:addons/sce_landinfo/models/land.py:21
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_floor_area
+#, python-format
+msgid "Floor Area(m2)"
+msgstr "占地面积(㎡)"
+
+#. module: sce_landinfo
+#: code:addons/sce_landinfo/controllers/controllers.py:19
+#: code:addons/sce_landinfo/models/land.py:32
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_floor_price
+#, python-format
+msgid "Floor Price(Yuan/m2)"
+msgstr "楼板价(㎡)"
+
+#. module: sce_landinfo
+#: code:addons/sce_landinfo/controllers/controllers.py:55
+#, python-format
+msgid "Floor Price(Yuan/m2）"
+msgstr "楼板价(元/㎡)"
+
+#. module: sce_landinfo
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_follow_up_status
+msgid "Follow Up Status"
+msgstr "跟进状态"
+
+#. module: sce_landinfo
+#: selection:sce_landinfo.land,follow_up_status:0
+msgid "Following"
+msgstr "跟进中"
+
+#. module: sce_landinfo
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_subcompany_general_manager_id
+msgid "General Manager"
+msgstr "总经理"
+
+#. module: sce_landinfo
+#: selection:sce_landinfo.land,follow_up_status:0
+msgid "Gived-up"
+msgstr "放弃"
+
+#. module: sce_landinfo
+#: model:ir.ui.view,arch_db:sce_landinfo.form_confirm
+msgid "Going to reject this request?"
+msgstr "确认要驳回申请吗？"
+
+#. module: sce_landinfo
+#: model:ir.ui.view,arch_db:sce_landinfo.form_owned
+msgid "Going to submit this version info to confirmation?"
+msgstr "确认要提交这个版本的信息到审批吗？"
+
+#. module: sce_landinfo
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_compare_history_land_ids
+#: model:ir.ui.menu,name:sce_landinfo.menu_5_list
+msgid "History Lands"
+msgstr "所有项目"
+
+#. module: sce_landinfo
+#: model:ir.actions.act_window,name:sce_landinfo.action_window_history
+msgid "History lands"
+msgstr "历史项目信息"
+
+#. module: sce_landinfo
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_compare_id
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_id
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_subcompany_id
+msgid "ID"
+msgstr "序号"
+
+#. module: sce_landinfo
+#: selection:sce_landinfo.land,land_type:0
+msgid "Industry land"
+msgstr "工业用地"
+
+#. module: sce_landinfo
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_integrity_rate
+#, fuzzy
+msgid "Integrity Rate"
+msgstr "信息完善度"
+
+#. module: sce_landinfo
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_integrity_rate_format
+msgid "Integrity rate"
+msgstr "信息完善度"
+
+#. module: sce_landinfo
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_is_default_version
+msgid "Is Default Version"
+msgstr "最新版本"
+
+#. module: sce_landinfo
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_is_owned
+msgid "Is Owned"
+msgstr "是否所属"
+
+#. module: sce_landinfo
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_land_grade
+msgid "Land Grade"
+msgstr "项目等级"
+
+#. module: sce_landinfo
+#: model:ir.ui.menu,name:sce_landinfo.menu_root
+msgid "Land Info"
+msgstr "土地信息"
+
+#. module: sce_landinfo
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_subcompany_land_manager_id
+msgid "Land Manager"
+msgstr "土拓经理/总监"
+
+#. module: sce_landinfo
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_land_status
+msgid "Land Status"
+msgstr "项目状态"
+
+#. module: sce_landinfo
+#: code:addons/sce_landinfo/controllers/controllers.py:6
+#: code:addons/sce_landinfo/models/land.py:19
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_land_type
+#, python-format
+msgid "Land Type"
+msgstr "用地性质"
+
+#. module: sce_landinfo
+#: model:ir.ui.view,arch_db:sce_landinfo.form
+#: model:ir.ui.view,arch_db:sce_landinfo.form_confirm
+#: model:ir.ui.view,arch_db:sce_landinfo.form_owned
+msgid "Land basic info"
+msgstr "项目基本信息"
+
+#. module: sce_landinfo
+#: code:addons/sce_landinfo/models/land.py:184
+#: code:addons/sce_landinfo/models/land.py:207
+#: code:addons/sce_landinfo/models/land.py:248
+#, python-format
+msgid "Land confirm notification."
+msgstr "项目信息审批提醒."
+
+#. module: sce_landinfo
+#: code:addons/sce_landinfo/models/land.py:352
+#, python-format
+msgid "Land info update notification."
+msgstr "项目信息更新提醒."
+
+#. module: sce_landinfo
+#: model:ir.ui.view,arch_db:sce_landinfo.form
+#: model:ir.ui.view,arch_db:sce_landinfo.form_confirm
+#: model:ir.ui.view,arch_db:sce_landinfo.form_owned
+msgid "Land transfer info"
+msgstr "项目转让信息"
+
+#. module: sce_landinfo
+#: model:res.groups,name:sce_landinfo.landinfo_admin
+msgid "LandInfo / Administrator"
+msgstr "土地信息 / 管理员"
+
+#. module: sce_landinfo
+#: model:res.groups,name:sce_landinfo.landinfo_manager
+msgid "LandInfo / Manager"
+msgstr "土地信息 / 经理"
+
+#. module: sce_landinfo
+#: model:res.groups,name:sce_landinfo.landinfo_user
+msgid "LandInfo / User"
+msgstr "土地信息 / 用户"
+
+#. module: sce_landinfo
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land___last_update
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_compare___last_update
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_subcompany___last_update
+msgid "Last Modified on"
+msgstr "最后编缉时间"
+
+#. module: sce_landinfo
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_last_notify_date
+msgid "Last Notify Date"
+msgstr "最后通知时间"
+
+#. module: sce_landinfo
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_compare_write_uid
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_write_uid
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_subcompany_write_uid
+msgid "Last Updated by"
+msgstr "最后更新人"
+
+#. module: sce_landinfo
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_compare_write_date
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_write_date
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_subcompany_write_date
+msgid "Last Updated on"
+msgstr "最后更新时间"
+
+#. module: sce_landinfo
+#: code:addons/sce_landinfo/controllers/controllers.py:7
+#: code:addons/sce_landinfo/models/land.py:20
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_location
+#, python-format
+msgid "Location"
+msgstr "地块位置"
+
+#. module: sce_landinfo
+#: model:ir.ui.menu,name:sce_landinfo.menu_3_list
+msgid "My Lands"
+msgstr "我负责的项目"
+
+#. module: sce_landinfo
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_name
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_subcompany_name
+msgid "Name"
+msgstr "姓名"
+
+#. module: sce_landinfo
+#: code:addons/sce_landinfo/controllers/controllers.py:58
+#, python-format
+msgid "Net Profit Rate"
+msgstr "净利润率"
+
+#. module: sce_landinfo
+#: code:addons/sce_landinfo/controllers/controllers.py:26
+#: code:addons/sce_landinfo/models/land.py:39
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_net_profit_rate
+#, python-format
+msgid "Net Profit Rate(%)"
+msgstr "净利润率(%)"
+
+#. module: sce_landinfo
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_next_update_date
+msgid "Next Update Date"
+msgstr "下次跟踪时间"
+
+#. module: sce_landinfo
+#: selection:sce_landinfo.land,land_status:0
+msgid "Not sold"
+msgstr "未成交"
+
+#. module: sce_landinfo
+#: selection:sce_landinfo.land,follow_up_status:0
+msgid "Obtained"
+msgstr "已获取"
+
+#. module: sce_landinfo
+#: code:addons/sce_landinfo/controllers/controllers.py:13
+#: code:addons/sce_landinfo/models/land.py:26
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_office_area
+#, python-format
+msgid "Office Area(m2)"
+msgstr "办公面积(㎡)"
+
+#. module: sce_landinfo
+#: selection:sce_landinfo.land,land_type:0
+msgid "Office land"
+msgstr "办公用地"
+
+#. module: sce_landinfo
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_compare_origin_land_id
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_origin_land_id
+msgid "Origin Land"
+msgstr "原始项目"
+
+#. module: sce_landinfo
+#: selection:sce_landinfo.land,land_type:0
+msgid "Other"
+msgstr "其他"
+
+#. module: sce_landinfo
+#: code:addons/sce_landinfo/controllers/controllers.py:14
+#: code:addons/sce_landinfo/models/land.py:27
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_other_area
+#, python-format
+msgid "Other Area(m2)"
+msgstr "其他面积(㎡)"
+
+#. module: sce_landinfo
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_other_report
+msgid "Other Report"
+msgstr "其他报告"
+
+#. module: sce_landinfo
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_other_report_fname
+msgid "Other Report Fname"
+msgstr "其他报告文件名"
+
+#. module: sce_landinfo
+#: code:addons/sce_landinfo/models/land.py:189
+#, python-format
+msgid ""
+"Please check my confirm request: \n"
+"Name: %s\n"
+"Version: %d"
+msgstr ""
+"请您审批新的项目信息：\n"
+"项目名称: %s\n"
+"版本: %d"
+
+#. module: sce_landinfo
+#: code:addons/sce_landinfo/models/land.py:183
+#, python-format
+msgid "Please check my confirm request: <br/>Name: %s<br/>Version: %d"
+msgstr "请您审批我的项目信息：<br/>项目名称: %s<br/>版本: %d"
+
+#. module: sce_landinfo
+#: code:addons/sce_landinfo/controllers/controllers.py:9
+#: code:addons/sce_landinfo/models/land.py:22
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_plot_ratio
+#, python-format
+msgid "Plot Ratio"
+msgstr "容积率"
+
+#. module: sce_landinfo
+#: code:addons/sce_landinfo/controllers/controllers.py:25
+#: code:addons/sce_landinfo/models/land.py:38
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_product_value
+#, python-format
+msgid "Product Value"
+msgstr "货值"
+
+#. module: sce_landinfo
+#: code:addons/sce_landinfo/controllers/controllers.py:58
+#, python-format
+msgid "Product Value(Yi Yuan)"
+msgstr "货值(亿元)"
+
+#. module: sce_landinfo
+#: code:addons/sce_landinfo/controllers/controllers.py:5
+#: code:addons/sce_landinfo/models/land.py:18
+#, python-format
+msgid "Project Name"
+msgstr "项目名称"
+
+#. module: sce_landinfo
+#: model:ir.ui.view,arch_db:sce_landinfo.form_confirm
+msgid "Reject"
+msgstr "驳回"
+
+#. module: sce_landinfo
+#: code:addons/sce_landinfo/controllers/controllers.py:11
+#: code:addons/sce_landinfo/models/land.py:24
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_residential_area
+#, python-format
+msgid "Residential Area(m2)"
+msgstr "住宅面积(㎡)"
+
+#. module: sce_landinfo
+#: selection:sce_landinfo.land,land_type:0
+msgid "Residential land"
+msgstr "居住用地"
+
+#. module: sce_landinfo
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_response_user_id
+msgid "Response User"
+msgstr "跟踪人"
+
+#. module: sce_landinfo
+#: model:ir.ui.menu,name:sce_landinfo.menu_1
+msgid "SCE Coperation"
+msgstr "中骏置业"
+
+#. module: sce_landinfo
+#: model:ir.actions.act_window,name:sce_landinfo.action_window_all
+msgid "SCE Lands"
+msgstr "所有项目"
+
+#. module: sce_landinfo
+#: code:addons/sce_landinfo/controllers/controllers.py:21
+#: code:addons/sce_landinfo/controllers/controllers.py:56
+#: code:addons/sce_landinfo/models/land.py:34
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_saler_core_requirement
+#, python-format
+msgid "Saler Core Requirement"
+msgstr "转让方核心诉求"
+
+#. module: sce_landinfo
+#: code:addons/sce_landinfo/controllers/controllers.py:20
+#: code:addons/sce_landinfo/controllers/controllers.py:55
+#: code:addons/sce_landinfo/models/land.py:33
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_saler_introduction
+#, python-format
+msgid "Saler Introduction"
+msgstr "转让方介绍"
+
+#. module: sce_landinfo
+#: code:addons/sce_landinfo/controllers/controllers.py:15
+#: code:addons/sce_landinfo/models/land.py:28
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_site_situation
+#, python-format
+msgid "Site Situation"
+msgstr "现场状况"
+
+#. module: sce_landinfo
+#: selection:sce_landinfo.land,land_status:0
+msgid "Sold"
+msgstr "已成交"
+
+#. module: sce_landinfo
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_state
+msgid "State"
+msgstr "状态"
+
+#. module: sce_landinfo
+#: selection:sce_landinfo.land,transfer_type:0
+msgid "Stock transfer"
+msgstr "股权转让"
+
+#. module: sce_landinfo
+#: model:ir.model.fields,field_description:sce_landinfo.field_res_users_subcompany_ids
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_subcompany_id
+msgid "Subcompany"
+msgstr "所属公司"
+
+#. module: sce_landinfo
+#: model:ir.ui.view,arch_db:sce_landinfo.form_owned
+msgid "Submit"
+msgstr "提交审批"
+
+#. module: sce_landinfo
+#: selection:sce_landinfo.land,state:0
+msgid "Submitted"
+msgstr "已提交审批"
+
+#. module: sce_landinfo
+#: model:ir.ui.view,arch_db:sce_landinfo.notify_confirm
+msgid "Test mail"
+msgstr "测试邮件"
+
+#. module: sce_landinfo
+#: code:addons/sce_landinfo/controllers/controllers.py:17
+#: code:addons/sce_landinfo/controllers/controllers.py:54
+#: code:addons/sce_landinfo/models/land.py:30
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_transfer_price
+#, python-format
+msgid "Transfer Price(Yi Yuan)"
+msgstr "转让价款(亿元)"
+
+#. module: sce_landinfo
+#: code:addons/sce_landinfo/controllers/controllers.py:16
+#: code:addons/sce_landinfo/models/land.py:29
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_transfer_type
+#, python-format
+msgid "Transfer Type"
+msgstr "转让方式"
+
+#. module: sce_landinfo
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_subcompany_user_ids
+msgid "User"
+msgstr "用户"
+
+#. module: sce_landinfo
+#: model:ir.actions.act_window,name:sce_landinfo.action_window_user
+msgid "User Management"
+msgstr "用户管理"
+
+#. module: sce_landinfo
+#: model:ir.model,name:sce_landinfo.model_res_users
+msgid "Users"
+msgstr "用户"
+
+#. module: sce_landinfo
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_version
+msgid "Version"
+msgstr "版本"
+
+#. module: sce_landinfo
+#: model:ir.ui.view,arch_db:sce_landinfo.form
+msgid "View Histroy"
+msgstr "查看历史版本"
+
+#. module: sce_landinfo
+#: code:addons/sce_landinfo/controllers/controllers.py:18
+#: code:addons/sce_landinfo/controllers/controllers.py:54
+#: code:addons/sce_landinfo/models/land.py:31
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_voice_cost
+#, python-format
+msgid "Voice Cost(Yi Yuan)"
+msgstr "有票成本(亿元)"
+
+#. module: sce_landinfo
+#: code:addons/sce_landinfo/controllers/controllers.py:10
+#: code:addons/sce_landinfo/models/land.py:23
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_volume_area
+#, python-format
+msgid "Volume Area(m2)"
+msgstr "计容建筑面积(㎡)"
+
+#. module: sce_landinfo
+#: model:ir.actions.act_window,name:sce_landinfo.action_window_wechat
+#: model:ir.ui.menu,name:sce_landinfo.menu_wechat
+msgid "Wechat plugin"
+msgstr "微信插件"
+
+#. module: sce_landinfo
+#: model:ir.model.fields,field_description:sce_landinfo.field_sce_landinfo_land_write_date_format
+msgid "Write Date Format"
+msgstr "最新跟踪时间"
+
+#. module: sce_landinfo
+#: code:addons/sce_landinfo/models/land.py:212
+#, python-format
+msgid ""
+"Your land confirm request has been rejected!\n"
+"Name: %s\n"
+"Version: %d"
+msgstr ""
+"您的项目信息审批申请被驳回了，请检查后再提交！\n"
+"项目名称: %s\n"
+"版本: %d"
+
+#. module: sce_landinfo
+#: code:addons/sce_landinfo/models/land.py:206
+#, python-format
+msgid ""
+"Your land confirm request has been rejected!<br/>Name: %s<br/>Version: %d"
+msgstr ""
+"您的项目信息审批申请被驳回了，请检查后再提交！<br/>项目名称: %s</br>版本: %d"
+
+#. module: sce_landinfo
+#: code:addons/sce_landinfo/models/land.py:253
+#, python-format
+msgid ""
+"Your land confirm request has successfully passed!\n"
+"Name: %s\n"
+"Version: %d"
+msgstr ""
+"您的项目信息审批申请已经顺利通过了，恭喜！\n"
+"项目名称: %s<\n"
+"版本: %d"
+
+#. module: sce_landinfo
+#: code:addons/sce_landinfo/models/land.py:247
+#, python-format
+msgid ""
+"Your land confirm request has successfully passed!<br/>Name: %s<br/>Version: "
+"%d"
+msgstr ""
+"您的项目信息审批申请已经顺利通过了，恭喜！<br/>项目名称: %s</br>版本: %d"
+
+#. module: sce_landinfo
+#: code:addons/sce_landinfo/models/land.py:357
+#, python-format
+msgid ""
+"Your responsible land need to be updated:\n"
+"Name: %s\n"
+"Update Date: %s"
+msgstr ""
+"您负责的项目，需要更新信息了哦，请及时更新后提交审批：\n"
+"项目名称: %s\n"
+"预期更新时间: %s"
+
+#. module: sce_landinfo
+#: code:addons/sce_landinfo/models/land.py:351
+#, python-format
+msgid ""
+"Your responsible land need to be updated:<br/>Name: %s<br/>Update Date: %s"
+msgstr ""
+"您负责的项目，需要更新信息了哦，请及时更新后提交审批：<br/>项目名称: %s</br>"
+"预期更新时间: %s"
+
+#. module: sce_landinfo
+#: model:ir.actions.act_window,name:sce_landinfo.action_window_submit
+msgid "action_window_submit"
+msgstr "提交土地信息"
+
+#. module: sce_landinfo
+#: model:ir.ui.view,arch_db:sce_landinfo.form
+#: model:ir.ui.view,arch_db:sce_landinfo.form_confirm
+#: model:ir.ui.view,arch_db:sce_landinfo.form_owned
+msgid "land name"
+msgstr "项目名称"
+
+#. module: sce_landinfo
+#: model:ir.ui.view,arch_db:sce_landinfo.form
+#: model:ir.ui.view,arch_db:sce_landinfo.form_confirm
+#: model:ir.ui.view,arch_db:sce_landinfo.form_owned
+msgid "management info"
+msgstr "管理信息"
+
+#. module: sce_landinfo
+#: model:ir.actions.server,name:sce_landinfo.action_server
+msgid "sce_landinfo server"
+msgstr "土地信息"
+
+#. module: sce_landinfo
+#: model:ir.model,name:sce_landinfo.model_sce_landinfo_land
+msgid "sce_landinfo.land"
+msgstr "土地信息"
+
+#. module: sce_landinfo
+#: model:ir.model,name:sce_landinfo.model_sce_landinfo_land_compare
+msgid "sce_landinfo.land_compare"
+msgstr "历史版本对比"
+
+#. module: sce_landinfo
+#: model:ir.model,name:sce_landinfo.model_sce_landinfo_subcompany
+msgid "sce_landinfo.subcompany"
+msgstr "公司信息"
+
+#. module: sce_landinfo
+#: model:ir.ui.view,arch_db:sce_landinfo.land_compare
+msgid "住宅面积(㎡)"
+msgstr ""
+
+#. module: sce_landinfo
+#: model:ir.ui.view,arch_db:sce_landinfo.land_compare
+msgid "其他面积(㎡)"
+msgstr ""
+
+#. module: sce_landinfo
+#: model:ir.ui.view,arch_db:sce_landinfo.land_compare
+msgid "办公面积(㎡)"
+msgstr ""
+
+#. module: sce_landinfo
+#: model:ir.ui.view,arch_db:sce_landinfo.land_compare
+msgid "占地面积(㎡)"
+msgstr ""
+
+#. module: sce_landinfo
+#: model:ir.ui.view,arch_db:sce_landinfo.land_compare
+msgid "商业面积(㎡)"
+msgstr ""
+
+#. module: sce_landinfo
+#: model:ir.ui.view,arch_db:sce_landinfo.land_compare
+msgid "容积率"
+msgstr ""
+
+#. module: sce_landinfo
+#: model:ir.ui.view,arch_db:sce_landinfo.land_compare
+msgid "版本名称"
+msgstr ""
+
+#. module: sce_landinfo
+#: model:ir.ui.view,arch_db:sce_landinfo.land_compare
+msgid "现场状况"
+msgstr ""
+
+#. module: sce_landinfo
+#: model:ir.ui.view,arch_db:sce_landinfo.land_compare
+msgid "用地性质"
+msgstr ""
+
+#. module: sce_landinfo
+#: model:ir.ui.view,arch_db:sce_landinfo.land_compare
+msgid "计容建筑面积(㎡)"
+msgstr ""
+
+#. module: sce_landinfo
+#: model:ir.ui.view,arch_db:sce_landinfo.land_compare
+msgid "转让方式"
+msgstr ""
+
+#. module: sce_landinfo
+#: model:ir.ui.view,arch_db:sce_landinfo.land_compare
+msgid "项目名称"
+msgstr ""

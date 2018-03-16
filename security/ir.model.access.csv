@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_sce_lawsuit,access_sce_lawsuito_lawsuit,model_sce_lawsuit_lawsuit,,1,0,1,0
+lawsuit_lawsuit_user,lawsuit_lawsuit_user,model_sce_lawsuit_lawsuit,lawsuit_user,1,1,1,1
+lawsuit_lawsuit_manager,lawsuit_lawsuit_manager,model_sce_lawsuit_lawsuit,lawsuit_manager,1,1,1,1
+lawsuit_lawsuit_admin,lawsuit_lawsuit_admin,model_sce_lawsuit_lawsuit,lawsuit_admin,1,1,1,1
+

@@ -1,2 +1,3 @@
-# sce_lawsuit
-SCE lawsuit management
+Sce Landinfo Management System
+==============================
+Only used for Sce Landinfo management and tracking.
