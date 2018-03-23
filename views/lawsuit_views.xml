@@ -55,15 +55,12 @@
                   </div>
                   <group>
                       <group>
-                          <field name="name" string="land name"/>
+                          <field name="region"/>
                           <field name="project_name"/>
                       </group>
                       <group>
                           <field name="state"/>
                       </group>
-                  </group>
-                  <group>
-                      <field name="region"/>
                   </group>
                   <group>
                       <field name="cause"/>
