@@ -62,25 +62,131 @@ class Lawsuit(models.Model):
 
     ### 仲裁阶段 ###
     # 经办人
-    arbi_operator = fields.Char('Operator', required=True)
+    arbi_operator = fields.Char('Operator', states={'arbitration':[('required',True)]})
     # 申请人
-    arbi_claimant = fields.Char('Claimant', required=True)
+    arbi_claimant = fields.Char('Arbitration claimant', states={'arbitration':[('required',True)]})
     # 被申请人
-    arbi_respondent = fields.Char('Respondent', required=True)
+    arbi_respondent = fields.Char('Arbitration respondent', states={'arbitration':[('required',True)]})
     # 仲裁请求
-    arbi_claim = fields.Text('Arbitration claim', required=True)
+    arbi_claim = fields.Text('Arbitration claim', states={'arbitration':[('required',True)]})
     # 立案时间
-    arbi_regist_date = fields.Date('Registration date', required=True)
+    arbi_regist_date = fields.Date('Registration date', states={'arbitration':[('required',True)]})
     # 首次开庭时间
     arbi_open_date = fields.Date('Frist opening date', resquired=True)
     # 是否结案
-    arbi_is_settled = fields.Boolean('Is settled', required=True)
+    arbi_is_settled = fields.Boolean('Is settled', states={'arbitration':[('required',True)]})
     # 仲裁进展/结果
-    arbi_result = fields.Text('Arbitration result', required=True)
+    arbi_result = fields.Text('Arbitration progress/results', states={'arbitration':[('required',True)]})
     # 是否需申请执行
     arbi_need_enforcement = fields.Boolean('Need enforcement?')
     # 下次跟踪时间
-    arbi_next_update_date = fields.Date()
+    arbi_next_update_date = fields.Date('Next update date')
+    # 结案时间
+    arbi_settled_date = fields.Date('Settled date')
+    # 其他信息
+    arbi_other_info = fields.Text('Other info')
+
+
+    ### 一审阶段 ###
+    # 经办人
+    firs_operator = fields.Char('Operator', states={'first_instance':[('required',True)]})
+    # 原告
+    firs_claimant = fields.Char('Claimant', states={'first_instance':[('required',True)]})
+    # 被告
+    firs_respondent = fields.Char('Respondent', states={'first_instance':[('required',True)]})
+    # 诉讼请求
+    firs_claim = fields.Text('Claim', states={'first_instance':[('required',True)]})
+    # 立案时间
+    firs_regist_date = fields.Date('Registration date', states={'first_instance':[('required',True)]})
+    # 首次开庭时间
+    firs_open_date = fields.Date('Frist opening date', resquired=True)
+    # 是否结案
+    firs_is_settled = fields.Boolean('Is settled', states={'first_instance':[('required',True)]})
+    # 诉讼进展/结果
+    firs_result = fields.Text('Litigation progress/results', states={'first_instance':[('required',True)]})
+    # 是否需申请执行
+    firs_need_enforcement = fields.Boolean('Need enforcement?')
+    # 下次跟踪时间
+    firs_next_update_date = fields.Date('Next update date')
+    # 结案时间
+    firs_settled_date = fields.Date('Settled date')
+    # 其他信息
+    firs_other_info = fields.Text('Other info')
+
+    ### 二审阶段 ###
+    # 经办人
+    seco_operator = fields.Char('Operator', states={'second_instance':[('required',True)]})
+    # 上诉人 
+    seco_claimant = fields.Char('Appellant', states={'second_instance':[('required',True)]})
+    # 被上诉人
+    seco_respondent = fields.Char('Appellee', states={'second_instance':[('required',True)]})
+    # 上诉请求
+    seco_claim = fields.Text('Appeals request', states={'second_instance':[('required',True)]})
+    # 立案时间
+    seco_regist_date = fields.Date('Registration date', states={'second_instance':[('required',True)]})
+    # 首次开庭时间
+    seco_open_date = fields.Date('Frist opening date', resquired=True)
+    # 是否结案
+    seco_is_settled = fields.Boolean('Is settled', states={'second_instance':[('required',True)]})
+    # 诉讼进展/结果
+    seco_result = fields.Text('Litigation progress/results', states={'second_instance':[('required',True)]})
+    # 是否需申请执行
+    seco_need_enforcement = fields.Boolean('Need enforcement?')
+    # 下次跟踪时间
+    seco_next_update_date = fields.Date('Next update date')
+    # 结案时间
+    seco_settled_date = fields.Date('Settled date')
+    # 其他信息
+    seco_other_info = fields.Text('Other info')
+
+    ### 执行阶段 ###
+    # 经办人
+    enfo_operator = fields.Char('Operator', states={'enforcement':[('required',True)]})
+    # 申请执行人 
+    enfo_claimant = fields.Char('Claimant', states={'enforcement':[('required',True)]})
+    # 被执行人 
+    enfo_respondent = fields.Char('Respondent', states={'enforcement':[('required',True)]})
+    # 执行请求
+    enfo_claim = fields.Text('Claim', states={'enforcement':[('required',True)]})
+    # # 立案时间
+    # enfo_regist_date = fields.Date('Registration date', states={'enforcement':[('required',True)]})
+    # # 首次开庭时间
+    # enfo_open_date = fields.Date('Frist opening date', resquired=True)
+    # 申请执行时间
+    enfo_apply_date = fields.Date('Application enforcement date')
+    # 是否结案
+    enfo_is_settled = fields.Boolean('Is settled', states={'enforcement':[('required',True)]})
+    # 执行进展/结果
+    enfo_result = fields.Text('Enforcement progress/results', states={'enforcement':[('required',True)]})
+    # 执行标的(金额)
+    enfo_subject = fields.Char('Enforcement subject(amount of money)')
+    # # 是否需申请执行
+    # enfo_need_enforcement = fields.Boolean('Need enforcement?')
+    # 下次跟踪时间
+    enfo_next_update_date = fields.Date('Next update date')
+    # 结案时间
+    enfo_settled_date = fields.Date('Settled date')
+    # 其他信息
+    enfo_other_info = fields.Text('Other info')
+
+
+    # 列表信息
+    # 立案时间
+    list_regist_date = fields.Date('Registration date', compute='_compute_regist_date', store=True)
+    # 对方当事人名称
+
+    @api.depends('arbi_regist_date', 'firs_regist_date', 'seco_regist_date')
+    def _compute_regist_date(self):
+        for record in self:
+            if record.state == 'arbitration':
+                record.list_regist_date = record.arbi_regist_date
+            elif record.state == 'first_instance':
+                record.list_regist_date = record.firs_regist_date
+            elif record.state == 'second_instance':
+                record.list_regist_date = record.seco_regist_date
+            else:
+                record.list_regist_date = False
+
 
 
     # @api.model

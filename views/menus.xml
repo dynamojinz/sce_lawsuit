@@ -1,7 +1,7 @@
 <odoo>
   <data>
     <!-- Top menu item -->
-    <menuitem name="Lawsuit" id="sce_lawsuit.menu_root" groups="sce_lawsuit.lawsuit_user"/>
+    <menuitem name="Lawsuit Management" id="sce_lawsuit.menu_root" groups="sce_lawsuit.lawsuit_user"/>
     <!-- menu categories -->
     <menuitem name="SCE Coperation" id="sce_lawsuit.menu_1" parent="sce_lawsuit.menu_root"/>
     <menuitem name="Configuration" id="sce_lawsuit.menu_2"

@@ -1,18 +1,20 @@
 <odoo>
   <data>
     <!-- explicit list view definition -->
-    <!--<record model="ir.ui.view" id="sce_landinfo.company_list">-->
-      <!--<field name="name">Company List</field>-->
-      <!--<field name="model">sce_landinfo.subcompany</field>-->
-      <!--<field name="arch" type="xml">-->
-        <!--<tree>-->
-          <!--<field name="name"/>-->
-          <!--<field name="land_manager_id"/>-->
-          <!--<field name="general_manager_id"/>-->
-          <!--<field name="user_ids"/>-->
-        <!--</tree>-->
-      <!--</field>-->
-    <!--</record>-->
+    <record model="ir.ui.view" id="sce_lawsuit.lawsuit_list">
+      <field name="name">Lawsuit List</field>
+      <field name="model">sce_lawsuit.lawsuit</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="region"/>
+          <field name="write_date"/>
+          <field name="cause"/>
+          <field name="state"/>
+          <field name="list_regist_date"/>
+        </tree>
+      </field>
+    </record>
 
     <!--<record model="ir.ui.view" id="sce_landinfo.user_list">-->
       <!--<field name="name">User List</field>-->
@@ -25,18 +27,6 @@
       <!--</field>-->
     <!--</record>-->
 
-    <record model="ir.ui.view" id="sce_lawsuit.list">
-      <field name="name">Lawsuit list</field>
-      <field name="model">sce_lawsuit.lawsuit</field>
-      <field name="arch" type="xml">
-        <tree default_order="create_date">
-          <field name="name"/>
-          <field name="create_date"/>
-          <field name="write_date"/>
-          <!--<field name="response_user_id"/>-->
-        </tree>
-      </field>
-    </record>
 
 	
     <!--<record model="ir.ui.view" id="sce_landinfo.form_owned">-->
@@ -60,6 +50,9 @@
                   <field name="state" widget="statusbar" readonly="1"/>
               </header>
               <sheet>
+                  <div class="oe_title">
+                      <h1><label for="name" class="oe_edit_only"/><field name="name" string="Lawsuit Name"/></h1>
+                  </div>
                   <group>
                       <group>
                           <field name="name" string="land name"/>
@@ -75,33 +68,163 @@
                   <group>
                       <field name="cause"/>
                   </group>
-                  <separator string="Arbitration State" />
-                  <group>
+                  <notebook>
+                  <page string="Arbitration State" name="arbitration">
                       <group>
-                          <field name="arbi_operator"/>
+                          <group>
+                              <field name="arbi_operator"/>
+                          </group>
+                          <group>
+                              <field name="arbi_claimant"/>
+                              <field name="arbi_respondent"/>
+                          </group>
                       </group>
                       <group>
-                          <field name="arbi_claimant"/>
-                          <field name="arbi_respondent"/>
-                      </group>
-                  </group>
-                  <group>
-                      <field name="arbi_claim"/>
-                  </group>
-                  <group>
-                      <group>
-                          <field name="arbi_regist_date"/>
+                          <field name="arbi_claim"/>
                       </group>
                       <group>
-                          <field name="arbi_open_date"/>
+                          <group>
+                              <field name="arbi_regist_date"/>
+                          </group>
+                          <group>
+                              <field name="arbi_open_date"/>
+                          </group>
                       </group>
-                  </group>
-                  <group>
-                      <field name="arbi_is_settled"/>
-                  </group>
-                  <group>
-                      <field name="arbi_result"/>
-                  </group>
+                      <group>
+                          <field name="arbi_is_settled"/>
+                      </group>
+                      <group>
+                          <field name="arbi_result"/>
+                      </group>
+                      <group>
+                          <field name="arbi_need_enforcement"/>
+                      </group>
+                      <group>
+                          <field name="arbi_next_update_date"/>
+                      </group>
+                      <group>
+                          <field name="arbi_settled_date"/>
+                      </group>
+                      <group>
+                          <field name="arbi_other_info"/>
+                      </group>
+                  </page>
+                  <page string="First Instance" name="first_instance" attrs="{'invisible':[('state','=','arbitration')]}">
+                      <group>
+                          <group>
+                              <field name="firs_operator"/>
+                          </group>
+                          <group>
+                              <field name="firs_claimant"/>
+                              <field name="firs_respondent"/>
+                          </group>
+                      </group>
+                      <group>
+                          <field name="firs_claim"/>
+                      </group>
+                      <group>
+                          <group>
+                              <field name="firs_regist_date"/>
+                          </group>
+                          <group>
+                              <field name="firs_open_date"/>
+                          </group>
+                      </group>
+                      <group>
+                          <field name="firs_is_settled"/>
+                      </group>
+                      <group>
+                          <field name="firs_result"/>
+                      </group>
+                      <group>
+                          <field name="firs_need_enforcement"/>
+                      </group>
+                      <group>
+                          <field name="firs_next_update_date"/>
+                      </group>
+                      <group>
+                          <field name="firs_settled_date"/>
+                      </group>
+                      <group>
+                          <field name="firs_other_info"/>
+                      </group>
+                  </page>
+                  <page string="Second Instance" name="second_instance" attrs="{'invisible':[('state','in',('arbitration','first_instance'))]}">
+                      <group>
+                          <group>
+                              <field name="seco_operator"/>
+                          </group>
+                          <group>
+                              <field name="seco_claimant"/>
+                              <field name="seco_respondent"/>
+                          </group>
+                      </group>
+                      <group>
+                          <field name="seco_claim"/>
+                      </group>
+                      <group>
+                          <group>
+                              <field name="seco_regist_date"/>
+                          </group>
+                          <group>
+                              <field name="seco_open_date"/>
+                          </group>
+                      </group>
+                      <group>
+                          <field name="seco_is_settled"/>
+                      </group>
+                      <group>
+                          <field name="seco_result"/>
+                      </group>
+                      <group>
+                          <field name="seco_need_enforcement"/>
+                      </group>
+                      <group>
+                          <field name="seco_next_update_date"/>
+                      </group>
+                      <group>
+                          <field name="seco_settled_date"/>
+                      </group>
+                      <group>
+                          <field name="seco_other_info"/>
+                      </group>
+                  </page>
+                  <page string="Enforcement State" name="enforcement" attrs="{'invisible':[('state','in',('arbitration','first_instance','second_instance'))]}">
+                      <group>
+                          <group>
+                              <field name="enfo_operator"/>
+                          </group>
+                          <group>
+                              <field name="enfo_claimant"/>
+                              <field name="enfo_respondent"/>
+                          </group>
+                      </group>
+                      <group>
+                          <field name="enfo_claim"/>
+                      </group>
+                      <group>
+                          <field name="enfo_apply_date"/>
+                      </group>
+                      <group>
+                          <field name="enfo_is_settled"/>
+                      </group>
+                      <group>
+                          <field name="enfo_result"/>
+                      </group>
+                      <group>
+                          <field name="enfo_subject"/>
+                      </group>
+                      <group>
+                          <field name="enfo_next_update_date"/>
+                      </group>
+                      <group>
+                          <field name="enfo_settled_date"/>
+                      </group>
+                      <group>
+                          <field name="enfo_other_info"/>
+                      </group>
+                  </page>
+                  </notebook>
               </sheet>
           </form>
       </field>

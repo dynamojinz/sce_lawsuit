@@ -14,7 +14,7 @@
     <!--</record>-->
 
     <record model="ir.actions.act_window" id="sce_lawsuit.action_window_all">
-      <field name="name">Lawsuitss</field>
+      <field name="name">Lawsuit</field>
       <field name="res_model">sce_lawsuit.lawsuit</field>
       <field name="view_mode">tree,form</field>
     </record>
