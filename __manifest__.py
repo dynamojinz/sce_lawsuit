@@ -31,6 +31,7 @@
         'views/menus.xml',
         # 'views/templates.xml',
         # 'views/mail_templates.xml',
+        'data/lawsuit_data.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

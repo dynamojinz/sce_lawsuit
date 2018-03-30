@@ -12,6 +12,14 @@
           <field name="cause"/>
           <field name="state"/>
           <field name="list_regist_date"/>
+          <field name="list_claimant"/>
+          <field name="list_respondent"/>
+          <field name="list_claim"/>
+          <field name="list_next_update_date"/>
+          <field name="list_is_settled"/>
+          <field name="list_settled_date"/>
+          <field name="list_operator"/>
+          <field name="list_other_info"/>
         </tree>
       </field>
     </record>
@@ -60,6 +68,7 @@
                       </group>
                       <group>
                           <field name="state"/>
+                          <field name="response_user_id"/>
                       </group>
                   </group>
                   <group>
@@ -97,10 +106,10 @@
                           <field name="arbi_need_enforcement"/>
                       </group>
                       <group>
-                          <field name="arbi_next_update_date"/>
+                          <field name="arbi_next_update_date" attrs="{'required':['&amp;',('arbi_is_settled','=',False),('state','=','arbitration')]}"/>
                       </group>
                       <group>
-                          <field name="arbi_settled_date"/>
+                          <field name="arbi_settled_date" attrs="{'required':['&amp;',('arbi_is_settled','=',False),('state','=','arbitration')]}"/>
                       </group>
                       <group>
                           <field name="arbi_other_info"/>
@@ -137,10 +146,10 @@
                           <field name="firs_need_enforcement"/>
                       </group>
                       <group>
-                          <field name="firs_next_update_date"/>
+                          <field name="firs_next_update_date" attrs="{'required':['&amp;',('firs_is_settled','=',False),('state','=','first_instance')]}"/>
                       </group>
                       <group>
-                          <field name="firs_settled_date"/>
+                          <field name="firs_settled_date" attrs="{'required':['&amp;',('firs_is_settled','=',False),('state','=','first_instance')]}"/>
                       </group>
                       <group>
                           <field name="firs_other_info"/>
@@ -177,10 +186,10 @@
                           <field name="seco_need_enforcement"/>
                       </group>
                       <group>
-                          <field name="seco_next_update_date"/>
+                          <field name="seco_next_update_date" attrs="{'required':['&amp;',('seco_is_settled','=',False),('state','=','second_instance')]}"/>
                       </group>
                       <group>
-                          <field name="seco_settled_date"/>
+                          <field name="seco_settled_date" attrs="{'required':['&amp;',('seco_is_settled','=',False),('state','=','second_instance')]}"/>
                       </group>
                       <group>
                           <field name="seco_other_info"/>
@@ -212,10 +221,10 @@
                           <field name="enfo_subject"/>
                       </group>
                       <group>
-                          <field name="enfo_next_update_date"/>
+                          <field name="enfo_next_update_date" attrs="{'required':['&amp;',('enfo_is_settled','=',False),('state','=','enforcement')]}"/>
                       </group>
                       <group>
-                          <field name="enfo_settled_date"/>
+                          <field name="enfo_settled_date" attrs="{'required':['&amp;',('enfo_is_settled','=',False),('state','=','enforcement')]}"/>
                       </group>
                       <group>
                           <field name="enfo_other_info"/>
