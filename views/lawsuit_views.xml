@@ -11,15 +11,6 @@
           <field name="write_date"/>
           <field name="cause"/>
           <field name="state"/>
-          <field name="list_regist_date"/>
-          <field name="list_claimant"/>
-          <field name="list_respondent"/>
-          <field name="list_claim"/>
-          <field name="list_next_update_date"/>
-          <field name="list_is_settled"/>
-          <field name="list_settled_date"/>
-          <field name="list_operator"/>
-          <field name="list_other_info"/>
         </tree>
       </field>
     </record>
@@ -36,7 +27,6 @@
     <!--</record>-->
 
 
-	
     <!--<record model="ir.ui.view" id="sce_landinfo.form_owned">-->
       <!--<field name="name">land_form_submit</field>-->
       <!--<field name="model">sce_landinfo.land</field>-->
@@ -49,156 +39,306 @@
       <!--</field>-->
     <!--</record>-->
 
-    <record model="ir.ui.view" id="sce_lawsuit.form">
+    <record model="ir.ui.view" id="sce_lawsuit.form_lawsuit">
       <field name="name">Lawsuit form</field>
       <field name="model">sce_lawsuit.lawsuit</field>
       <field name="arch" type="xml">
           <form>
               <header>
-                  <field name="state" widget="statusbar" readonly="1"/>
+                  <field name="state" widget="statusbar" clickable="1" options="{'fold_field':'arbitration'}"/>
               </header>
               <sheet>
                   <div class="oe_title">
-                      <h1><label for="name" class="oe_edit_only"/><field name="name" string="Lawsuit Name"/></h1>
+                      <h1><label for="name" class="oe_edit_only"/><field name="name" string="Lawsuit Name" placeholder="【XXX】诉【XXX】【XXX】纠纷案"/></h1>
                   </div>
                   <group>
                       <group>
                           <field name="region"/>
                           <field name="project_name"/>
-                      </group>
-                      <group>
-                          <field name="state"/>
+                          <field name="type_id" />
                           <field name="response_user_id"/>
                       </group>
-                  </group>
-                  <group>
-                      <field name="cause"/>
+                      <group>
+                          <!--<field name="state"/>-->
+                          <field name="has_arbi"/>
+                          <field name="has_retr"/>
+                          <field name="next_update_date"/>
+                      </group>
                   </group>
                   <notebook>
-                  <page string="Arbitration State" name="arbitration">
+                      <page string="Arbitration State" name="arbitration" attrs="{'invisible':[('has_arbi','=',False)]}">
+                      <separator string="Regist information" class="oe_left"/>
                       <group>
                           <group>
-                              <field name="arbi_operator"/>
+                              <field name="arbi_regist_date"/>
+                              <field name="arbi_no"/>
+                              <field name="arbi_subject"/>
                           </group>
                           <group>
                               <field name="arbi_claimant"/>
                               <field name="arbi_respondent"/>
+                              <field name="arbi_third_party"/>
                           </group>
                       </group>
                       <group>
                           <field name="arbi_claim"/>
-                      </group>
-                      <group>
-                          <group>
-                              <field name="arbi_regist_date"/>
-                          </group>
-                          <group>
-                              <field name="arbi_open_date"/>
-                          </group>
-                      </group>
-                      <group>
-                          <field name="arbi_is_settled"/>
-                      </group>
-                      <group>
                           <field name="arbi_result"/>
                       </group>
                       <group>
-                          <field name="arbi_need_enforcement"/>
+                          <group>
+                              <field name="arbi_court"/>
+                              <field name="arbi_judge"/>
+                              <field name="arbi_judge_tel"/>
+                          </group>
+                          <group>
+                              <field name="arbi_has_preservation"/>
+                              <field name="arbi_preservation" attrs="{'invisible':[('arbi_has_preservation','=',False)]}"/>
+                              <field name="arbi_has_external"/>
+                              <field name="arbi_external_lawyer" attrs="{'invisible':[('arbi_has_external','=',False)]}"/>
+                          </group>
                       </group>
                       <group>
-                          <field name="arbi_next_update_date" attrs="{'required':['&amp;',('arbi_is_settled','=',False),('state','=','arbitration')]}"/>
+                          <group>
+                              <label for="arbi_docs_claimant"/>
+                              <button name="action_get_attachment_tree_view_arbi_docs_claimant"
+                                  class="oe_stat_button"
+                                  icon="fa-book"
+                                  type="object">
+                                  <field name="arbi_docs_claimant_count" widget="statinfo" string="Documents"/>
+                              </button>
+                          </group>
+                          <group>
+                              <label for="arbi_docs_respondent"/>
+                              <button name="action_get_attachment_tree_view_arbi_docs_respondent"
+                                  class="oe_stat_button"
+                                  icon="fa-book"
+                                  type="object">
+                                  <field name="arbi_docs_respondent_count" widget="statinfo" string="Documents"/>
+                              </button>
+                          </group>
+                      </group>
+                      <separator string="Trail information" class="oe_left"/>
+                      <group>
+                          <field name="arbi_open_date"/>
+                          <field name="arbi_trial_records"/>
                       </group>
                       <group>
-                          <field name="arbi_settled_date" attrs="{'required':['&amp;',('arbi_is_settled','=',False),('state','=','arbitration')]}"/>
+                          <label for="arbi_docs_trial"/>
+                          <button name="action_get_attachment_tree_view_arbi_docs_trial"
+                              class="oe_stat_button"
+                              icon="fa-book"
+                              type="object">
+                              <field name="arbi_docs_trial_count" widget="statinfo" string="Documents"/>
+                          </button>
+                      </group>
+                      <separator string="Settle information" class="oe_left"/>
+                      <group>
+                          <group>
+                              <field name="arbi_is_settled"/>
+                              <field name="arbi_need_enforcement"/>
+                          </group>
+                          <group>
+                              <field name="arbi_settled_date" attrs="{'required':['&amp;',('arbi_is_settled','=',True),('state','=','arbitration')]}"/>
+                          </group>
                       </group>
                       <group>
                           <field name="arbi_other_info"/>
                       </group>
+                      <group>
+                          <label for="arbi_docs_settle"/>
+                          <button name="action_get_attachment_tree_view_arbi_docs_settle"
+                              class="oe_stat_button"
+                              icon="fa-book"
+                              type="object">
+                              <field name="arbi_docs_settle_count" widget="statinfo" string="Documents"/>
+                          </button>
+                      </group>
                   </page>
                   <page string="First Instance" name="first_instance" attrs="{'invisible':[('state','=','arbitration')]}">
+                      <separator string="Regist information" class="oe_left"/>
                       <group>
                           <group>
-                              <field name="firs_operator"/>
+                              <field name="firs_regist_date"/>
+                              <field name="firs_no"/>
+                              <field name="firs_subject"/>
                           </group>
                           <group>
                               <field name="firs_claimant"/>
                               <field name="firs_respondent"/>
+                              <field name="firs_third_party"/>
                           </group>
                       </group>
                       <group>
                           <field name="firs_claim"/>
-                      </group>
-                      <group>
-                          <group>
-                              <field name="firs_regist_date"/>
-                          </group>
-                          <group>
-                              <field name="firs_open_date"/>
-                          </group>
-                      </group>
-                      <group>
-                          <field name="firs_is_settled"/>
-                      </group>
-                      <group>
                           <field name="firs_result"/>
                       </group>
                       <group>
-                          <field name="firs_need_enforcement"/>
+                          <group>
+                              <field name="firs_court"/>
+                              <field name="firs_judge"/>
+                              <field name="firs_judge_tel"/>
+                          </group>
+                          <group>
+                              <field name="firs_has_preservation"/>
+                              <field name="firs_preservation" attrs="{'invisible':[('firs_has_preservation','=',False)]}"/>
+                              <field name="firs_has_external"/>
+                              <field name="firs_external_lawyer" attrs="{'invisible':[('firs_has_external','=',False)]}"/>
+                              <field name="firs_has_counterclaim"/>
+                              <field name="firs_counterclaim" attrs="{'invisible':[('firs_has_counterclaim','=',False)]}"/>
+                          </group>
                       </group>
                       <group>
-                          <field name="firs_next_update_date" attrs="{'required':['&amp;',('firs_is_settled','=',False),('state','=','first_instance')]}"/>
+                          <group>
+                              <label for="firs_docs_claimant"/>
+                              <button name="action_get_attachment_tree_view_firs_docs_claimant"
+                                  class="oe_stat_button"
+                                  icon="fa-book"
+                                  type="object">
+                                  <field name="firs_docs_claimant_count" widget="statinfo" string="Documents"/>
+                              </button>
+                          </group>
+                          <group>
+                              <label for="firs_docs_respondent"/>
+                              <button name="action_get_attachment_tree_view_firs_docs_respondent"
+                                  class="oe_stat_button"
+                                  icon="fa-book"
+                                  type="object">
+                                  <field name="firs_docs_respondent_count" widget="statinfo" string="Documents"/>
+                              </button>
+                          </group>
+                      </group>
+                      <separator string="Trail information" class="oe_left"/>
+                      <group>
+                          <field name="firs_open_date"/>
+                          <field name="firs_trial_records"/>
                       </group>
                       <group>
-                          <field name="firs_settled_date" attrs="{'required':['&amp;',('firs_is_settled','=',False),('state','=','first_instance')]}"/>
+                          <label for="firs_docs_trial"/>
+                          <button name="action_get_attachment_tree_view_firs_docs_trial"
+                              class="oe_stat_button"
+                              icon="fa-book"
+                              type="object">
+                              <field name="firs_docs_trial_count" widget="statinfo" string="Documents"/>
+                          </button>
+                      </group>
+                      <separator string="Settle information" class="oe_left"/>
+                      <group>
+                          <group>
+                              <field name="firs_is_settled"/>
+                              <field name="firs_need_enforcement"/>
+                          </group>
+                          <group>
+                              <field name="firs_settled_date" attrs="{'required':['&amp;',('firs_is_settled','=',True),('state','=','first_instance')]}"/>
+                          </group>
                       </group>
                       <group>
                           <field name="firs_other_info"/>
                       </group>
+                      <group>
+                          <label for="firs_docs_settle"/>
+                          <button name="action_get_attachment_tree_view_firs_docs_settle"
+                              class="oe_stat_button"
+                              icon="fa-book"
+                              type="object">
+                              <field name="firs_docs_settle_count" widget="statinfo" string="Documents"/>
+                          </button>
+                      </group>
                   </page>
                   <page string="Second Instance" name="second_instance" attrs="{'invisible':[('state','in',('arbitration','first_instance'))]}">
+                      <separator string="Regist information" class="oe_left"/>
                       <group>
                           <group>
-                              <field name="seco_operator"/>
+                              <field name="seco_regist_date"/>
+                              <field name="seco_no"/>
+                              <field name="seco_subject"/>
                           </group>
                           <group>
                               <field name="seco_claimant"/>
                               <field name="seco_respondent"/>
+                              <field name="seco_third_party"/>
                           </group>
                       </group>
                       <group>
                           <field name="seco_claim"/>
-                      </group>
-                      <group>
-                          <group>
-                              <field name="seco_regist_date"/>
-                          </group>
-                          <group>
-                              <field name="seco_open_date"/>
-                          </group>
-                      </group>
-                      <group>
-                          <field name="seco_is_settled"/>
-                      </group>
-                      <group>
                           <field name="seco_result"/>
                       </group>
                       <group>
-                          <field name="seco_need_enforcement"/>
+                          <group>
+                              <field name="seco_court"/>
+                              <field name="seco_judge"/>
+                              <field name="seco_judge_tel"/>
+                          </group>
+                          <group>
+                              <field name="seco_has_preservation"/>
+                              <field name="seco_preservation" attrs="{'invisible':[('seco_has_preservation','=',False)]}"/>
+                              <field name="seco_has_external"/>
+                              <field name="seco_external_lawyer" attrs="{'invisible':[('seco_has_external','=',False)]}"/>
+                          </group>
                       </group>
                       <group>
-                          <field name="seco_next_update_date" attrs="{'required':['&amp;',('seco_is_settled','=',False),('state','=','second_instance')]}"/>
+                          <group>
+                              <label for="seco_docs_claimant"/>
+                              <button name="action_get_attachment_tree_view_seco_docs_claimant"
+                                  class="oe_stat_button"
+                                  icon="fa-book"
+                                  type="object">
+                                  <field name="seco_docs_claimant_count" widget="statinfo" string="Documents"/>
+                              </button>
+                          </group>
+                          <group>
+                              <label for="seco_docs_respondent"/>
+                              <button name="action_get_attachment_tree_view_seco_docs_respondent"
+                                  class="oe_stat_button"
+                                  icon="fa-book"
+                                  type="object">
+                                  <field name="seco_docs_respondent_count" widget="statinfo" string="Documents"/>
+                              </button>
+                          </group>
+                      </group>
+                      <separator string="Trail information" class="oe_left"/>
+                      <group>
+                          <field name="seco_open_date"/>
+                          <field name="seco_trial_records"/>
                       </group>
                       <group>
-                          <field name="seco_settled_date" attrs="{'required':['&amp;',('seco_is_settled','=',False),('state','=','second_instance')]}"/>
+                          <label for="seco_docs_trial"/>
+                          <button name="action_get_attachment_tree_view_seco_docs_trial"
+                              class="oe_stat_button"
+                              icon="fa-book"
+                              type="object">
+                              <field name="seco_docs_trial_count" widget="statinfo" string="Documents"/>
+                          </button>
+                      </group>
+                      <separator string="Settle information" class="oe_left"/>
+                      <group>
+                          <group>
+                              <field name="seco_is_settled"/>
+                              <field name="seco_need_enforcement"/>
+                          </group>
+                          <group>
+                              <field name="seco_settled_date" attrs="{'required':['&amp;',('seco_is_settled','=',True),('state','=','second_instance')]}"/>
+                          </group>
                       </group>
                       <group>
                           <field name="seco_other_info"/>
                       </group>
+                      <group>
+                          <label for="seco_docs_settle"/>
+                          <button name="action_get_attachment_tree_view_seco_docs_settle"
+                              class="oe_stat_button"
+                              icon="fa-book"
+                              type="object">
+                              <field name="seco_docs_settle_count" widget="statinfo" string="Documents"/>
+                          </button>
+                      </group>
                   </page>
                   <page string="Enforcement State" name="enforcement" attrs="{'invisible':[('state','in',('arbitration','first_instance','second_instance'))]}">
+                      <separator string="Regist information" class="oe_left"/>
                       <group>
                           <group>
-                              <field name="enfo_operator"/>
+                              <field name="enfo_regist_date"/>
+                              <field name="enfo_no"/>
+                              <field name="enfo_subject"/>
                           </group>
                           <group>
                               <field name="enfo_claimant"/>
@@ -207,27 +347,128 @@
                       </group>
                       <group>
                           <field name="enfo_claim"/>
-                      </group>
-                      <group>
-                          <field name="enfo_apply_date"/>
-                      </group>
-                      <group>
-                          <field name="enfo_is_settled"/>
-                      </group>
-                      <group>
                           <field name="enfo_result"/>
                       </group>
                       <group>
-                          <field name="enfo_subject"/>
+                          <group>
+                              <field name="enfo_court"/>
+                              <field name="enfo_judge"/>
+                              <field name="enfo_judge_tel"/>
+                          </group>
+                          <group>
+                              <field name="enfo_has_clue"/>
+                              <field name="enfo_property_clue" attrs="{'invisible':[('enfo_has_clue','=',False)]}"/>
+                              <field name="enfo_has_external"/>
+                              <field name="enfo_external_lawyer" attrs="{'invisible':[('enfo_has_external','=',False)]}"/>
+                          </group>
                       </group>
                       <group>
-                          <field name="enfo_next_update_date" attrs="{'required':['&amp;',('enfo_is_settled','=',False),('state','=','enforcement')]}"/>
+                          <group>
+                              <label for="enfo_docs_claimant"/>
+                              <button name="action_get_attachment_tree_view_enfo_docs_claimant"
+                                  class="oe_stat_button"
+                                  icon="fa-book"
+                                  type="object">
+                                  <field name="enfo_docs_claimant_count" widget="statinfo" string="Documents"/>
+                              </button>
+                          </group>
                       </group>
+                      <!--<group>-->
+                          <!--<field name="enfo_apply_date"/>-->
+                      <!--</group>-->
+                      <separator string="Settle information" class="oe_left"/>
                       <group>
-                          <field name="enfo_settled_date" attrs="{'required':['&amp;',('enfo_is_settled','=',False),('state','=','enforcement')]}"/>
+                          <group>
+                              <field name="enfo_is_settled"/>
+                          </group>
+                          <group>
+                              <field name="enfo_settled_date" attrs="{'required':['&amp;',('enfo_is_settled','=',True),('state','=','enforcement')]}"/>
+                          </group>
                       </group>
                       <group>
                           <field name="enfo_other_info"/>
+                      </group>
+                      <group>
+                          <label for="enfo_docs_settle"/>
+                          <button name="action_get_attachment_tree_view_enfo_docs_settle"
+                              class="oe_stat_button"
+                              icon="fa-book"
+                              type="object">
+                              <field name="enfo_docs_settle_count" widget="statinfo" string="Documents"/>
+                          </button>
+                      </group>
+                  </page>
+                  <page string="Retrial State" name="retrial" attrs="{'invisible':['|',('state','!=','retrial'), ('has_retr','=',False)]}">
+                      <separator string="Regist information" class="oe_left"/>
+                      <group>
+                          <group>
+                              <field name="retr_regist_date"/>
+                              <field name="retr_no"/>
+                              <field name="retr_subject"/>
+                          </group>
+                          <group>
+                              <field name="retr_claimant"/>
+                              <field name="retr_respondent"/>
+                              <field name="retr_third_party"/>
+                          </group>
+                      </group>
+                      <group>
+                          <field name="retr_claim"/>
+                          <field name="retr_result"/>
+                      </group>
+                      <group>
+                          <group>
+                              <field name="retr_court"/>
+                              <field name="retr_judge"/>
+                              <field name="retr_judge_tel"/>
+                          </group>
+                          <group>
+                              <field name="retr_has_preservation"/>
+                              <field name="retr_preservation" attrs="{'invisible':[('retr_has_preservation','=',False)]}"/>
+                              <field name="retr_has_external"/>
+                              <field name="retr_external_lawyer" attrs="{'invisible':[('retr_has_external','=',False)]}"/>
+                          </group>
+                      </group>
+                      <group>
+                          <group>
+                              <label for="retr_docs_claimant"/>
+                              <button name="action_get_attachment_tree_view_retr_docs_claimant"
+                                  class="oe_stat_button"
+                                  icon="fa-book"
+                                  type="object">
+                                  <field name="retr_docs_claimant_count" widget="statinfo" string="Documents"/>
+                              </button>
+                          </group>
+                          <group>
+                              <label for="retr_docs_respondent"/>
+                              <button name="action_get_attachment_tree_view_retr_docs_respondent"
+                                  class="oe_stat_button"
+                                  icon="fa-book"
+                                  type="object">
+                                  <field name="retr_docs_respondent_count" widget="statinfo" string="Documents"/>
+                              </button>
+                          </group>
+                      </group>
+                      <separator string="Settle information" class="oe_left"/>
+                      <group>
+                          <group>
+                              <field name="retr_is_settled"/>
+                          </group>
+                          <group>
+                              <field name="retr_settled_date" attrs="{'required':['&amp;',('retr_is_settled','=',True),('state','=','retrial')]}"/>
+                          </group>
+                      </group>
+                      <group>
+                          <field name="retr_other_info"/>
+                      </group>
+                      <group>
+                          <label for="retr_docs_settle"/>
+                          <button name="action_get_attachment_tree_view_retr_docs_settle"
+                              class="oe_stat_button"
+                              icon="fa-book"
+                              type="object">
+                              <field name="retr_docs_settle_count" widget="statinfo" string="Documents"/>
+                          </button>
                       </group>
                   </page>
                   </notebook>
