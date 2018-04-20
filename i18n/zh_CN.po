@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-23 08:58+0000\n"
-"PO-Revision-Date: 2018-03-23 17:00+0800\n"
+"POT-Creation-Date: 2018-04-20 07:10+0000\n"
+"PO-Revision-Date: 2018-04-20 15:32+0800\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,7 +19,6 @@ msgstr ""
 
 #. module: sce_lawsuit
 #: code:addons/sce_lawsuit/controllers/controllers.py:21
-#: code:addons/sce_lawsuit/models/lawsuit.py:35
 #, python-format
 msgid "Agent Introduction"
 msgstr "中介介绍"
@@ -45,17 +44,12 @@ msgid "Appellee"
 msgstr "被上诉人"
 
 #. module: sce_lawsuit
-#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_enfo_apply_date
-msgid "Application enforcement date"
-msgstr "申请执行时间"
-
-#. module: sce_lawsuit
 #: selection:sce_lawsuit.lawsuit,state:0
 msgid "Arbitration"
 msgstr "仲裁"
 
 #. module: sce_lawsuit
-#: model:ir.ui.view,arch_db:sce_lawsuit.form
+#: model:ir.ui.view,arch_db:sce_lawsuit.form_lawsuit
 msgid "Arbitration State"
 msgstr "仲裁阶段"
 
@@ -70,6 +64,24 @@ msgid "Arbitration claimant"
 msgstr "申请人"
 
 #. module: sce_lawsuit
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_arbi_docs_claimant
+msgid "Arbitration claimant documents"
+msgstr "申请人提供材料"
+
+#. module: sce_lawsuit
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_arbi_court
+msgid "Arbitration organization"
+msgstr "仲裁机构"
+
+#. module: sce_lawsuit
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_arbi_preservation
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_firs_preservation
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_retr_preservation
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_seco_preservation
+msgid "Arbitration preservation"
+msgstr "诉讼保全"
+
+#. module: sce_lawsuit
 #: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_arbi_result
 msgid "Arbitration progress/results"
 msgstr "仲裁进展/结果"
@@ -80,18 +92,50 @@ msgid "Arbitration respondent"
 msgstr "被申请人"
 
 #. module: sce_lawsuit
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_arbi_docs_respondent
+msgid "Arbitration respondent documents"
+msgstr "被申请人提供材料"
+
+#. module: sce_lawsuit
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_arbi_docs_settle
+msgid "Arbitration settle documents"
+msgstr "结案相关资料"
+
+#. module: sce_lawsuit
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_arbi_docs_trial
+msgid "Arbitration trial documents"
+msgstr "庭审相关资料"
+
+#. module: sce_lawsuit
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_arbi_judge
+msgid "Arbitrator"
+msgstr "仲裁员"
+
+#. module: sce_lawsuit
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_arbi_judge_tel
+msgid "Arbitrator telephone"
+msgstr "仲裁员联系方式"
+
+#. module: sce_lawsuit
 #: code:addons/sce_lawsuit/controllers/controllers.py:26
-#: code:addons/sce_lawsuit/models/lawsuit.py:40
 #, python-format
 msgid "Base Judgement"
 msgstr "项目基本判断"
 
 #. module: sce_lawsuit
 #: code:addons/sce_lawsuit/controllers/controllers.py:11
-#: code:addons/sce_lawsuit/models/lawsuit.py:25
 #, python-format
 msgid "Bussiness Area(m2)"
 msgstr "商业面积(㎡)"
+
+#. module: sce_lawsuit
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_arbi_no
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_enfo_no
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_firs_no
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_retr_no
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_seco_no
+msgid "Case Number"
+msgstr "Case数量"
 
 #. module: sce_lawsuit
 #: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_cause
@@ -101,13 +145,35 @@ msgstr "案由"
 #. module: sce_lawsuit
 #: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_enfo_claim
 #: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_firs_claim
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_retr_claim
 msgid "Claim"
 msgstr "诉讼请求"
 
 #. module: sce_lawsuit
 #: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_enfo_claimant
 #: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_firs_claimant
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_retr_claimant
 msgid "Claimant"
+msgstr "原告"
+
+#. module: sce_lawsuit
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_arbi_docs_claimant_count
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_enfo_docs_claimant_count
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_firs_docs_claimant_count
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_retr_docs_claimant_count
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_seco_docs_claimant_count
+msgid "Claimant docs count"
+msgstr "原告提供材料数量"
+
+#. module: sce_lawsuit
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_firs_docs_claimant
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_seco_docs_claimant
+msgid "Claimant documents"
+msgstr "原告提供材料"
+
+#. module: sce_lawsuit
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_list_claimant
+msgid "Claimant/Appellant"
 msgstr "原告"
 
 #. module: sce_lawsuit
@@ -121,26 +187,45 @@ msgid "Configuration"
 msgstr "配置"
 
 #. module: sce_lawsuit
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_firs_counterclaim
+msgid "Counterclaim"
+msgstr "反诉"
+
+#. module: sce_lawsuit
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_arbi_trial_records
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_firs_trial_records
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_seco_trial_records
+msgid "Court trial records"
+msgstr "庭审记录"
+
+#. module: sce_lawsuit
 #: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_create_uid
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_type_create_uid
 msgid "Created by"
 msgstr "创建人"
 
 #. module: sce_lawsuit
 #: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_create_date
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_type_create_date
 msgid "Created on"
 msgstr "创建时间"
 
 #. module: sce_lawsuit
 #: code:addons/sce_lawsuit/controllers/controllers.py:22
-#: code:addons/sce_lawsuit/models/lawsuit.py:36
 #, python-format
 msgid "Debt Situation"
 msgstr "负债情况"
 
 #. module: sce_lawsuit
 #: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_display_name
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_type_display_name
 msgid "Display Name"
 msgstr "显示名称"
+
+#. module: sce_lawsuit
+#: model:ir.ui.view,arch_db:sce_lawsuit.form_lawsuit
+msgid "Documents"
+msgstr "个文件"
 
 #. module: sce_lawsuit
 #: selection:sce_lawsuit.lawsuit,state:0
@@ -148,9 +233,24 @@ msgid "Enforcement"
 msgstr "执行"
 
 #. module: sce_lawsuit
-#: model:ir.ui.view,arch_db:sce_lawsuit.form
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_enfo_docs_claimant
+msgid "Enforcement Claimant documents"
+msgstr "执行申请材料"
+
+#. module: sce_lawsuit
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_enfo_judge
+msgid "Enforcement Judge"
+msgstr "经办法官"
+
+#. module: sce_lawsuit
+#: model:ir.ui.view,arch_db:sce_lawsuit.form_lawsuit
 msgid "Enforcement State"
 msgstr "执行阶段"
+
+#. module: sce_lawsuit
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_enfo_court
+msgid "Enforcement court"
+msgstr "执行法院"
 
 #. module: sce_lawsuit
 #: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_enfo_result
@@ -164,30 +264,41 @@ msgstr "执行标的(金额)"
 
 #. module: sce_lawsuit
 #: code:addons/sce_lawsuit/controllers/controllers.py:23
-#: code:addons/sce_lawsuit/models/lawsuit.py:37
 #, python-format
 msgid "Estimate Sale Price(Yi Yuan)"
 msgstr "预计售价(元/㎡)"
 
 #. module: sce_lawsuit
-#: model:ir.ui.view,arch_db:sce_lawsuit.form
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_arbi_external_lawyer
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_enfo_external_lawyer
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_firs_external_lawyer
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_retr_external_lawyer
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_seco_external_lawyer
+msgid "External lawyer"
+msgstr "外聘律所及律师"
+
+#. module: sce_lawsuit
+#: model:ir.ui.view,arch_db:sce_lawsuit.form_lawsuit
 #: selection:sce_lawsuit.lawsuit,state:0
 msgid "First Instance"
-msgstr "一审阶段"
+msgstr "一审"
 
 #. module: sce_lawsuit
 #: code:addons/sce_lawsuit/controllers/controllers.py:7
-#: code:addons/sce_lawsuit/models/lawsuit.py:21
 #, python-format
 msgid "Floor Area(m2)"
 msgstr "占地面积(㎡)"
 
 #. module: sce_lawsuit
 #: code:addons/sce_lawsuit/controllers/controllers.py:18
-#: code:addons/sce_lawsuit/models/lawsuit.py:32
 #, python-format
 msgid "Floor Price(Yuan/m2)"
 msgstr "楼板价(㎡)"
+
+#. module: sce_lawsuit
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_firs_judge
+msgid "Frist Judge"
+msgstr "经办法官"
 
 #. module: sce_lawsuit
 #: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_arbi_open_date
@@ -197,27 +308,80 @@ msgid "Frist opening date"
 msgstr "首次开庭时间"
 
 #. module: sce_lawsuit
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_has_arbi
+msgid "Has arbitration state?"
+msgstr "是否有仲裁"
+
+#. module: sce_lawsuit
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_firs_has_counterclaim
+msgid "Has counterclaim?"
+msgstr "是否反诉"
+
+#. module: sce_lawsuit
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_arbi_has_external
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_enfo_has_external
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_firs_has_external
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_retr_has_external
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_seco_has_external
+msgid "Has external?"
+msgstr "是否外聘律所及律师"
+
+#. module: sce_lawsuit
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_arbi_has_preservation
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_firs_has_preservation
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_retr_has_preservation
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_seco_has_preservation
+msgid "Has preservation?"
+msgstr "是否诉讼保全"
+
+#. module: sce_lawsuit
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_enfo_has_clue
+msgid "Has respondent property clue?"
+msgstr "是否有被执行人财产线索"
+
+#. module: sce_lawsuit
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_has_retr
+msgid "Has retrial state?"
+msgstr "是否有再审"
+
+#. module: sce_lawsuit
 #: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_id
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_type_id
 msgid "ID"
 msgstr "序号"
+
+#. module: sce_lawsuit
+#: model:ir.model.fields,help:sce_lawsuit.field_sce_lawsuit_lawsuit_list_is_settled
+msgid "If now state has settled"
+msgstr "当前阶段是否结案"
 
 #. module: sce_lawsuit
 #: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_arbi_is_settled
 #: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_enfo_is_settled
 #: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_firs_is_settled
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_list_is_settled
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_retr_is_settled
 #: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_seco_is_settled
 msgid "Is settled"
 msgstr "是否结案"
 
 #. module: sce_lawsuit
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_enfo_judge_tel
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_firs_judge_tel
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_retr_judge_tel
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_seco_judge_tel
+msgid "Judge telephone"
+msgstr "法官联系方式"
+
+#. module: sce_lawsuit
 #: code:addons/sce_lawsuit/controllers/controllers.py:5
-#: code:addons/sce_lawsuit/models/lawsuit.py:19
 #, python-format
 msgid "Land Type"
 msgstr "用地性质"
 
 #. module: sce_lawsuit
 #: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit___last_update
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_type___last_update
 msgid "Last Modified on"
 msgstr "最后编缉时间"
 
@@ -228,11 +392,13 @@ msgstr "最后通知时间"
 
 #. module: sce_lawsuit
 #: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_write_uid
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_type_write_uid
 msgid "Last Updated by"
 msgstr "最后更新人"
 
 #. module: sce_lawsuit
 #: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_write_date
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_type_write_date
 msgid "Last Updated on"
 msgstr "最后更新时间"
 
@@ -262,9 +428,27 @@ msgid "Lawsuit Management"
 msgstr "诉讼管理"
 
 #. module: sce_lawsuit
-#: model:ir.ui.view,arch_db:sce_lawsuit.form
+#: model:ir.ui.view,arch_db:sce_lawsuit.form_lawsuit
 msgid "Lawsuit Name"
 msgstr "案件名称"
+
+#. module: sce_lawsuit
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_type_id
+msgid "Lawsuit Type"
+msgstr "案件类型"
+
+#. module: sce_lawsuit
+#: code:addons/sce_lawsuit/models/lawsuit.py:644
+#, python-format
+msgid "Lawsuit update notification."
+msgstr "案件信息更新提醒"
+
+#. module: sce_lawsuit
+#: model:ir.actions.server,name:sce_lawsuit.ir_cron_lawsuit_update_notification_ir_actions_server
+#: model:ir.cron,cron_name:sce_lawsuit.ir_cron_lawsuit_update_notification
+#: model:ir.cron,name:sce_lawsuit.ir_cron_lawsuit_update_notification
+msgid "Lawsuit: Update notification"
+msgstr "案件信息更新提醒"
 
 #. module: sce_lawsuit
 #: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_firs_result
@@ -274,7 +458,6 @@ msgstr "诉讼进展/结果"
 
 #. module: sce_lawsuit
 #: code:addons/sce_lawsuit/controllers/controllers.py:6
-#: code:addons/sce_lawsuit/models/lawsuit.py:20
 #, python-format
 msgid "Location"
 msgstr "位置"
@@ -286,6 +469,7 @@ msgstr "我负责的案件"
 
 #. module: sce_lawsuit
 #: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_name
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_type_name
 msgid "Name"
 msgstr "名称"
 
@@ -298,7 +482,6 @@ msgstr "是否需申请执行？"
 
 #. module: sce_lawsuit
 #: code:addons/sce_lawsuit/controllers/controllers.py:25
-#: code:addons/sce_lawsuit/models/lawsuit.py:39
 #, python-format
 msgid "Net Profit Rate(%)"
 msgstr "净利润率(%)"
@@ -307,13 +490,14 @@ msgstr "净利润率(%)"
 #: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_arbi_next_update_date
 #: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_enfo_next_update_date
 #: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_firs_next_update_date
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_next_update_date
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_retr_next_update_date
 #: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_seco_next_update_date
 msgid "Next update date"
 msgstr "下次跟进时间"
 
 #. module: sce_lawsuit
 #: code:addons/sce_lawsuit/controllers/controllers.py:12
-#: code:addons/sce_lawsuit/models/lawsuit.py:26
 #, python-format
 msgid "Office Area(m2)"
 msgstr "办公面积(㎡)"
@@ -322,13 +506,29 @@ msgstr "办公面积(㎡)"
 #: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_arbi_operator
 #: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_enfo_operator
 #: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_firs_operator
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_retr_operator
 #: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_seco_operator
 msgid "Operator"
 msgstr "经办人"
 
 #. module: sce_lawsuit
+#: model:ir.model.fields,help:sce_lawsuit.field_sce_lawsuit_lawsuit_list_claimant
+msgid "Original claimant(arbitration claimant or first instance claimant)."
+msgstr "初始原告（仲裁申请人或者一审原告）"
+
+#. module: sce_lawsuit
+#: model:ir.model.fields,help:sce_lawsuit.field_sce_lawsuit_lawsuit_list_regist_date
+msgid "Original regist date(arbitration or first instance)"
+msgstr "初始立案时间（仲裁立案时间或者一审立案时间）"
+
+#. module: sce_lawsuit
+#: model:ir.model.fields,help:sce_lawsuit.field_sce_lawsuit_lawsuit_list_respondent
+msgid ""
+"Original respondent(arbitration respondent or first instance respondent)"
+msgstr "初始被告（仲裁被申请人或者一审被告）"
+
+#. module: sce_lawsuit
 #: code:addons/sce_lawsuit/controllers/controllers.py:13
-#: code:addons/sce_lawsuit/models/lawsuit.py:27
 #, python-format
 msgid "Other Area(m2)"
 msgstr "其他面积(㎡)"
@@ -337,27 +537,25 @@ msgstr "其他面积(㎡)"
 #: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_arbi_other_info
 #: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_enfo_other_info
 #: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_firs_other_info
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_retr_other_info
 #: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_seco_other_info
 msgid "Other info"
 msgstr "其他信息"
 
 #. module: sce_lawsuit
 #: code:addons/sce_lawsuit/controllers/controllers.py:8
-#: code:addons/sce_lawsuit/models/lawsuit.py:22
 #, python-format
 msgid "Plot Ratio"
 msgstr "容积率"
 
 #. module: sce_lawsuit
 #: code:addons/sce_lawsuit/controllers/controllers.py:24
-#: code:addons/sce_lawsuit/models/lawsuit.py:38
 #, python-format
 msgid "Product Value"
 msgstr "货值"
 
 #. module: sce_lawsuit
 #: code:addons/sce_lawsuit/controllers/controllers.py:4
-#: code:addons/sce_lawsuit/models/lawsuit.py:18
 #: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_project_name
 #, python-format
 msgid "Project Name"
@@ -369,16 +567,26 @@ msgid "Region"
 msgstr "区域"
 
 #. module: sce_lawsuit
-#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_arbi_regist_date
-#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_firs_regist_date
 #: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_list_regist_date
+msgid "Regist date"
+msgstr "立案时间"
+
+#. module: sce_lawsuit
+#: model:ir.ui.view,arch_db:sce_lawsuit.form_lawsuit
+msgid "Regist information"
+msgstr "立案信息"
+
+#. module: sce_lawsuit
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_arbi_regist_date
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_enfo_regist_date
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_firs_regist_date
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_retr_regist_date
 #: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_seco_regist_date
 msgid "Registration date"
 msgstr "立案时间"
 
 #. module: sce_lawsuit
 #: code:addons/sce_lawsuit/controllers/controllers.py:10
-#: code:addons/sce_lawsuit/models/lawsuit.py:24
 #, python-format
 msgid "Residential Area(m2)"
 msgstr "住宅面积(㎡)"
@@ -386,8 +594,68 @@ msgstr "住宅面积(㎡)"
 #. module: sce_lawsuit
 #: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_enfo_respondent
 #: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_firs_respondent
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_retr_respondent
 msgid "Respondent"
 msgstr "被告"
+
+#. module: sce_lawsuit
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_arbi_docs_respondent_count
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_firs_docs_respondent_count
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_retr_docs_respondent_count
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_seco_docs_respondent_count
+msgid "Respondent docs count"
+msgstr "被告提供材料数量"
+
+#. module: sce_lawsuit
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_firs_docs_respondent
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_seco_docs_respondent
+msgid "Respondent documents"
+msgstr "被告提供材料"
+
+#. module: sce_lawsuit
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_enfo_property_clue
+msgid "Respondent property clue"
+msgstr "被执行人财产线索"
+
+#. module: sce_lawsuit
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_list_respondent
+msgid "Respondent/Appellee"
+msgstr "被告"
+
+#. module: sce_lawsuit
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_response_user_id
+msgid "Response User"
+msgstr "经办人"
+
+#. module: sce_lawsuit
+#: selection:sce_lawsuit.lawsuit,state:0
+msgid "Retrial"
+msgstr "再审"
+
+#. module: sce_lawsuit
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_retr_judge
+msgid "Retrial Judge"
+msgstr "经办法官"
+
+#. module: sce_lawsuit
+#: model:ir.ui.view,arch_db:sce_lawsuit.form_lawsuit
+msgid "Retrial State"
+msgstr "再审阶段"
+
+#. module: sce_lawsuit
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_retr_docs_claimant
+msgid "Retrial claimant documents"
+msgstr "再审申请人提供材料"
+
+#. module: sce_lawsuit
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_retr_result
+msgid "Retrial progress/results"
+msgstr "诉讼进展/结果"
+
+#. module: sce_lawsuit
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_retr_docs_respondent
+msgid "Retrial respondent documents"
+msgstr "再审被申请人提供材料"
 
 #. module: sce_lawsuit
 #: model:ir.ui.menu,name:sce_lawsuit.menu_1
@@ -396,35 +664,60 @@ msgstr "中骏置业"
 
 #. module: sce_lawsuit
 #: code:addons/sce_lawsuit/controllers/controllers.py:20
-#: code:addons/sce_lawsuit/models/lawsuit.py:34
 #, python-format
 msgid "Saler Core Requirement"
 msgstr "转让方核心诉求"
 
 #. module: sce_lawsuit
 #: code:addons/sce_lawsuit/controllers/controllers.py:19
-#: code:addons/sce_lawsuit/models/lawsuit.py:33
 #, python-format
 msgid "Saler Introduction"
 msgstr "转让方介绍"
 
 #. module: sce_lawsuit
-#: model:ir.ui.view,arch_db:sce_lawsuit.form
+#: model:ir.ui.view,arch_db:sce_lawsuit.form_lawsuit
 #: selection:sce_lawsuit.lawsuit,state:0
 msgid "Second Instance"
-msgstr "二审阶段"
+msgstr "二审"
+
+#. module: sce_lawsuit
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_seco_judge
+msgid "Second Judge"
+msgstr "经办法官"
+
+#. module: sce_lawsuit
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_arbi_docs_settle_count
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_enfo_docs_settle_count
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_firs_docs_settle_count
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_retr_docs_settle_count
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_seco_docs_settle_count
+msgid "Settle docs count"
+msgstr "结案资料数量"
+
+#. module: sce_lawsuit
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_enfo_docs_settle
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_firs_docs_settle
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_retr_docs_settle
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_seco_docs_settle
+msgid "Settle documents"
+msgstr "结案资料"
+
+#. module: sce_lawsuit
+#: model:ir.ui.view,arch_db:sce_lawsuit.form_lawsuit
+msgid "Settle information"
+msgstr "结案信息"
 
 #. module: sce_lawsuit
 #: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_arbi_settled_date
 #: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_enfo_settled_date
 #: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_firs_settled_date
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_retr_settled_date
 #: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_seco_settled_date
 msgid "Settled date"
 msgstr "结案时间"
 
 #. module: sce_lawsuit
 #: code:addons/sce_lawsuit/controllers/controllers.py:14
-#: code:addons/sce_lawsuit/models/lawsuit.py:28
 #, python-format
 msgid "Site Situation"
 msgstr "现场状况"
@@ -435,29 +728,66 @@ msgid "State"
 msgstr "所处阶段"
 
 #. module: sce_lawsuit
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_arbi_subject
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_firs_subject
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_retr_subject
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_seco_subject
+msgid "Subject(amount of money)"
+msgstr "标的(金额)"
+
+#. module: sce_lawsuit
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_arbi_third_party
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_firs_third_party
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_retr_third_party
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_seco_third_party
+msgid "Third party"
+msgstr "第三人"
+
+#. module: sce_lawsuit
+#: model:ir.ui.view,arch_db:sce_lawsuit.form_lawsuit
+msgid "Trail information"
+msgstr "再审信息"
+
+#. module: sce_lawsuit
 #: code:addons/sce_lawsuit/controllers/controllers.py:16
-#: code:addons/sce_lawsuit/models/lawsuit.py:30
 #, python-format
 msgid "Transfer Price(Yi Yuan)"
 msgstr "转让价款(亿元)"
 
 #. module: sce_lawsuit
 #: code:addons/sce_lawsuit/controllers/controllers.py:15
-#: code:addons/sce_lawsuit/models/lawsuit.py:29
 #, python-format
 msgid "Transfer Type"
 msgstr "转让方式"
 
 #. module: sce_lawsuit
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_firs_court
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_retr_court
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_seco_court
+msgid "Trial court"
+msgstr "审理法院"
+
+#. module: sce_lawsuit
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_arbi_docs_trial_count
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_firs_docs_trial_count
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_seco_docs_trial_count
+msgid "Trial docs count"
+msgstr "审判资料数量"
+
+#. module: sce_lawsuit
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_firs_docs_trial
+#: model:ir.model.fields,field_description:sce_lawsuit.field_sce_lawsuit_lawsuit_seco_docs_trial
+msgid "Trial documents"
+msgstr "审判资料"
+
+#. module: sce_lawsuit
 #: code:addons/sce_lawsuit/controllers/controllers.py:17
-#: code:addons/sce_lawsuit/models/lawsuit.py:31
 #, python-format
 msgid "Voice Cost(Yi Yuan)"
 msgstr "有票成本(亿元)"
 
 #. module: sce_lawsuit
 #: code:addons/sce_lawsuit/controllers/controllers.py:9
-#: code:addons/sce_lawsuit/models/lawsuit.py:23
 #, python-format
 msgid "Volume Area(m2)"
 msgstr "计容建筑面积(㎡)"
@@ -469,16 +799,31 @@ msgid "Wechat plugin"
 msgstr "微信插件"
 
 #. module: sce_lawsuit
-#: model:ir.actions.act_window,name:sce_lawsuit.action_window_add
-msgid "action_window_submit"
-msgstr "提交土地信息"
+#: code:addons/sce_lawsuit/models/lawsuit.py:643
+#: code:addons/sce_lawsuit/models/lawsuit.py:650
+#, python-format
+msgid ""
+"Your responsible lawsuit need to be updated:<br/>Name: %s<br/>State: %s<br/"
+">Update Date: %s"
+msgstr ""
+"您经办的诉讼，需要更新信息了：<br/>名称：%s<br/>阶段：%s<br/>更新日期：%s"
 
 #. module: sce_lawsuit
-#: model:ir.ui.view,arch_db:sce_lawsuit.form
-msgid "land name"
-msgstr "项目名称"
+#: model:ir.actions.act_window,name:sce_lawsuit.action_window_add
+msgid "action_window_submit"
+msgstr "提交案件信息"
 
 #. module: sce_lawsuit
 #: model:ir.model,name:sce_lawsuit.model_sce_lawsuit_lawsuit
 msgid "sce_lawsuit.lawsuit"
 msgstr "案件"
+
+#. module: sce_lawsuit
+#: model:ir.model,name:sce_lawsuit.model_sce_lawsuit_type
+msgid "sce_lawsuit.type"
+msgstr "案件类型"
+
+#. module: sce_lawsuit
+#: model:ir.ui.view,arch_db:sce_lawsuit.form_lawsuit
+msgid "【XXX】诉【XXX】【XXX】纠纷案"
+msgstr ""

@@ -7,10 +7,13 @@
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
-          <field name="region"/>
-          <field name="write_date"/>
-          <field name="cause"/>
+          <field name="type_id"/>
+          <field name="list_claimant"/>
+          <field name="list_respondent"/>
+          <field name="list_regist_date"/>
           <field name="state"/>
+          <field name="list_is_settled"/>
+          <field name="response_user_id"/>
         </tree>
       </field>
     </record>

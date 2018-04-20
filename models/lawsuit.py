@@ -550,93 +550,44 @@ class Lawsuit(models.Model):
 
 
     ###  列表信息 ###
-    # 立案时间
-    list_regist_date = fields.Date('Registration date', compute='_compute_regist_date', store=True)
-
-    @api.depends('arbi_regist_date', 'firs_regist_date', 'seco_regist_date')
-    def _compute_regist_date(self):
-        for record in self:
-            if record.state == 'arbitration':
-                record.list_regist_date = record.arbi_regist_date
-            elif record.state == 'first_instance':
-                record.list_regist_date = record.firs_regist_date
-            elif record.state == 'second_instance':
-                record.list_regist_date = record.seco_regist_date
-            else:
-                record.list_regist_date = False
-
     # 申请人/原告/上诉人/申请执行人
-    list_claimant = fields.Char('Claimant/Appellant', compute='_compute_claimant', store=True)
+    list_claimant = fields.Char('Claimant/Appellant', compute='_compute_claimant', store=True, help="Original claimant(arbitration claimant or first instance claimant).")
 
-    @api.depends('arbi_claimant', 'firs_claimant','seco_claimant','enfo_claimant')
+    @api.depends('arbi_claimant', 'firs_claimant')
     def _compute_claimant(self):
         for record in self:
-            if record.state == 'arbitration':
+            if record.has_arbi:
                 record.list_claimant = record.arbi_claimant
-            elif record.state == 'first_instance':
-                record.list_claimant = record.firs_claimant
-            elif record.state == 'second_instance':
-                record.list_claimant = record.seco_claimant
-            elif record.state == 'enforcement':
-                record.list_claimant = record.enfo_claimant
             else:
-                record.list_claimant = False
+                record.list_claimant = record.firs_claimant
 
     # 被申请人/被告/被上诉人/被执行人
-    list_respondent = fields.Char('Respondent/Appellee', compute='_compute_respondent', store=True)
+    list_respondent = fields.Char('Respondent/Appellee', compute='_compute_respondent', store=True, help="Original respondent(arbitration respondent or first instance respondent)")
 
-    @api.depends('arbi_respondent', 'firs_respondent','seco_respondent','enfo_respondent')
+    @api.depends('arbi_respondent', 'firs_respondent')
     def _compute_respondent(self):
         for record in self:
-            if record.state == 'arbitration':
+            if record.has_arbi:
                 record.list_respondent = record.arbi_respondent
-            elif record.state == 'first_instance':
+            else:
                 record.list_respondent = record.firs_respondent
-            elif record.state == 'second_instance':
-                record.list_respondent = record.seco_respondent
-            elif record.state == 'enforcement':
-                record.list_respondent = record.enfo_respondent
-            else:
-                record.list_respondent = False
 
-    # 诉讼请求
-    list_claim = fields.Char('Claim', compute='_compute_claim', store=True)
+    # 立案时间
+    list_regist_date = fields.Char('Regist date', compute='_compute_regist_date', store=True, help="Original regist date(arbitration or first instance)")
 
-    @api.depends('arbi_claim', 'firs_claim','seco_claim','enfo_claim')
-    def _compute_claim(self):
+    @api.depends('arbi_regist_date', 'firs_regist_date')
+    def _compute_regist_date(self):
         for record in self:
-            if record.state == 'arbitration':
-                record.list_claim = record.arbi_claim
-            elif record.state == 'first_instance':
-                record.list_claim = record.firs_claim
-            elif record.state == 'second_instance':
-                record.list_claim = record.seco_claim
-            elif record.state == 'enforcement':
-                record.list_claim = record.enfo_claim
+            if record.has_arbi:
+                record.list_regist_date = record.arbi_regist_date
             else:
-                record.list_claim = False
+                record.list_regist_date = record.firs_regist_date
 
-    # 下次跟踪时间
-    list_next_update_date = fields.Char('Next update date', compute='_compute_next_update_date', store=True)
-
-    @api.depends('arbi_next_update_date', 'firs_next_update_date','seco_next_update_date','enfo_next_update_date')
-    def _compute_next_update_date(self):
-        for record in self:
-            if record.state == 'arbitration':
-                record.list_next_update_date = record.arbi_next_update_date
-            elif record.state == 'first_instance':
-                record.list_next_update_date = record.firs_next_update_date
-            elif record.state == 'second_instance':
-                record.list_next_update_date = record.seco_next_update_date
-            elif record.state == 'enforcement':
-                record.list_next_update_date = record.enfo_next_update_date
-            else:
-                record.list_next_update_date = False
 
     # 是否结案
-    list_is_settled = fields.Char('Is settled', compute='_compute_is_settled', store=True)
+    list_is_settled = fields.Char('Is settled', compute='_compute_is_settled', store=True, help="If now state has settled")
 
-    @api.depends('arbi_is_settled', 'firs_is_settled','seco_is_settled','enfo_is_settled')
+    @api.depends('arbi_is_settled', 'firs_is_settled','seco_is_settled','enfo_is_settled','retr_is_settled')
     def _compute_is_settled(self):
         for record in self:
             if record.state == 'arbitration':
@@ -647,59 +598,11 @@ class Lawsuit(models.Model):
                 record.list_is_settled = record.seco_is_settled
             elif record.state == 'enforcement':
                 record.list_is_settled = record.enfo_is_settled
+            elif record.state == 'retrial':
+                record.list_is_settled = record.retr_is_settled
             else:
                 record.list_is_settled = False
 
-    # 结案时间
-    list_settled_date = fields.Char('Settled date', compute='_compute_settled_date', store=True)
-
-    @api.depends('arbi_settled_date', 'firs_settled_date','seco_settled_date','enfo_settled_date')
-    def _compute_settled_date(self):
-        for record in self:
-            if record.state == 'arbitration':
-                record.list_settled_date = record.arbi_settled_date
-            elif record.state == 'first_instance':
-                record.list_settled_date = record.firs_settled_date
-            elif record.state == 'second_instance':
-                record.list_settled_date = record.seco_settled_date
-            elif record.state == 'enforcement':
-                record.list_settled_date = record.enfo_settled_date
-            else:
-                record.list_settled_date = False
-
-    # 经办人
-    list_operator = fields.Char('Operator', compute='_compute_operator', store=True)
-
-    @api.depends('arbi_operator', 'firs_operator','seco_operator','enfo_operator')
-    def _compute_operator(self):
-        for record in self:
-            if record.state == 'arbitration':
-                record.list_operator = record.arbi_operator
-            elif record.state == 'first_instance':
-                record.list_operator = record.firs_operator
-            elif record.state == 'second_instance':
-                record.list_operator = record.seco_operator
-            elif record.state == 'enforcement':
-                record.list_operator = record.enfo_operator
-            else:
-                record.list_operator = False
-
-    # 其他
-    list_other_info = fields.Char('Other info', compute='_compute_other_info', store=True)
-
-    @api.depends('arbi_other_info', 'firs_other_info','seco_other_info','enfo_other_info')
-    def _compute_other_info(self):
-        for record in self:
-            if record.state == 'arbitration':
-                record.list_other_info = record.arbi_other_info
-            elif record.state == 'first_instance':
-                record.list_other_info = record.firs_other_info
-            elif record.state == 'second_instance':
-                record.list_other_info = record.seco_other_info
-            elif record.state == 'enforcement':
-                record.list_other_info = record.enfo_other_info
-            else:
-                record.list_other_info = False
 
     # 附件相关
     @api.multi
