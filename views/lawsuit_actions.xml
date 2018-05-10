@@ -1,11 +1,11 @@
 <odoo>
   <data>
     <!-- actions opening views on models -->
-    <!--<record model="ir.actions.act_window" id="sce_landinfo.action_window_company">-->
-      <!--<field name="name">Company Management</field>-->
-      <!--<field name="res_model">sce_landinfo.subcompany</field>-->
-      <!--<field name="view_mode">tree,form</field>-->
-    <!--</record>-->
+    <record model="ir.actions.act_window" id="sce_lawsuit.action_window_company">
+      <field name="name">Company Management</field>
+      <field name="res_model">sce_lawsuit.subcompany</field>
+      <field name="view_mode">tree,form</field>
+    </record>
 
     <!--<record model="ir.actions.act_window" id="sce_landinfo.action_window_user">-->
       <!--<field name="name">User Management</field>-->

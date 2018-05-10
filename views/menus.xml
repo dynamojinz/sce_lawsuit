@@ -24,8 +24,8 @@
     <menuitem name="Wechat plugin" id="sce_lawsuit.menu_wechat" parent="sce_lawsuit.menu_1"
               action="sce_lawsuit.action_window_wechat"/>
 
-    <!--<menuitem name="Company Management" id="sce_lawsuit.menu_6_list" parent="sce_lawsuit.menu_2"-->
-              <!--action="sce_lawsuit.action_window_company"/>-->
+    <menuitem name="Company Management" id="sce_lawsuit.menu_6_list" parent="sce_lawsuit.menu_2"
+              action="sce_lawsuit.action_window_company"/>
     <!--
     <menuitem name="Server to list" id="sce_landinfo" parent="sce_landinfo.menu_2"
               action="sce_landinfo.action_server"/>

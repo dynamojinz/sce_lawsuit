@@ -29,6 +29,26 @@
       <!--</field>-->
     <!--</record>-->
 
+    <record id="ir_attachment_view_search_inherit_lawsuit" model="ir.ui.view">
+        <field name="name">ir.attachment.search.inherit.lawsuit</field>
+        <field name="model">ir.attachment</field>
+        <field name="mode">primary</field>
+        <field name="inherit_id" ref="base.view_attachment_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='create_date']" position="after">
+                <field name="index_content" string="Content"/>
+            </xpath>
+            <xpath expr="//filter[@name='my_documents_filter']" position="attributes">
+                <attribute name='invisible'>1</attribute>
+            </xpath>
+            <xpath expr="//filter[@name='url_filter']" position="attributes">
+                <attribute name='invisible'>1</attribute>
+            </xpath>
+            <xpath expr="//filter[@name='binary_filter']" position="attributes">
+                <attribute name='invisible'>1</attribute>
+            </xpath>
+        </field>
+    </record>
 
     <!--<record model="ir.ui.view" id="sce_landinfo.form_owned">-->
       <!--<field name="name">land_form_submit</field>-->
@@ -66,6 +86,7 @@
                           <field name="has_arbi"/>
                           <field name="has_retr"/>
                           <field name="next_update_date"/>
+                          <field name="subcompany_id"/>
                       </group>
                   </group>
                   <notebook>

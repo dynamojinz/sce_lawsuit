@@ -26,7 +26,7 @@ class Lawsuit(models.Model):
     # 区域
     region = fields.Char(required=True)
     # 案由
-    cause = fields.Text(required=True)
+    # cause = fields.Text(required=True)
     # 阶段
     state = fields.Selection(selection=[
             ('arbitration','Arbitration'),             # 仲裁
@@ -43,6 +43,15 @@ class Lawsuit(models.Model):
     next_update_date = fields.Date('Next update date', required=True)
     # 经办人
     response_user_id = fields.Many2one('res.users', default=lambda self:self.env.user, readonly=True)
+    # 所属公司
+    def _compute_default_company(self):
+        companys = self.env.user.lawsuit_subcompany_ids
+        if len(companys) > 0:
+            return companys[0]
+        else:
+            return False
+
+    subcompany_id = fields.Many2one('sce_lawsuit.subcompany', default=_compute_default_company, required=True)
 
     ### 仲裁阶段 ###
     ## 立案信息
@@ -611,6 +620,7 @@ class Lawsuit(models.Model):
         action = attachment_action.read()[0]
         action['context'] = {'default_res_model':self._name,'default_res_id':self.ids[0], 'default_res_field':res_field}
         action['domain'] = str(['&', ('res_model', '=', self._name),('res_field','=',res_field),('res_id', 'in', self.ids)])
+        action['search_view_id'] = (self.env.ref('sce_lawsuit.ir_attachment_view_search_inherit_lawsuit').id,)
         return action
 
     @api.multi
