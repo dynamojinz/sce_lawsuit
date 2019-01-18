@@ -85,7 +85,6 @@
                           <!--<field name="state"/>-->
                           <field name="has_arbi"/>
                           <field name="has_retr"/>
-                          <field name="next_update_date"/>
                           <field name="subcompany_id"/>
                       </group>
                   </group>
@@ -201,6 +200,7 @@
                               <field name="firs_court"/>
                               <field name="firs_judge"/>
                               <field name="firs_judge_tel"/>
+                              <field name="firs_quote_close_date"/>
                           </group>
                           <group>
                               <field name="firs_has_preservation"/>
@@ -209,6 +209,7 @@
                               <field name="firs_external_lawyer" attrs="{'invisible':[('firs_has_external','=',False)]}"/>
                               <field name="firs_has_counterclaim"/>
                               <field name="firs_counterclaim" attrs="{'invisible':[('firs_has_counterclaim','=',False)]}"/>
+                              <field name="firs_ident_org"/>
                           </group>
                       </group>
                       <group>

@@ -39,8 +39,8 @@ class Lawsuit(models.Model):
     has_arbi = fields.Boolean('Has arbitration state?')
     # 是否有再审
     has_retr = fields.Boolean('Has retrial state?')
-    # 下次跟踪时间
-    next_update_date = fields.Date('Next update date', required=True)
+    # 下次跟踪时间 - not used
+    next_update_date = fields.Date('Next update date')
     # 经办人
     response_user_id = fields.Many2one('res.users', default=lambda self:self.env.user, readonly=True)
     # 所属公司
@@ -108,7 +108,7 @@ class Lawsuit(models.Model):
     ## 附件
     # 立案资料
     arbi_docs_claimant = fields.One2many('ir.attachment','res_id',
-            domain=['&',('res_model','=','sce_lawsuit.lawsuit'),('res_field','=','arbi_docs_respondent')],
+            domain=['&',('res_model','=','sce_lawsuit.lawsuit'),('res_field','=','arbi_docs_claimant')],
             string='Arbitration claimant documents')
     arbi_docs_claimant_count = fields.Integer('Claimant docs count', compute='_compute_arbi_docs_claimant_count')
     arbi_docs_respondent = fields.One2many('ir.attachment','res_id', 
@@ -217,6 +217,10 @@ class Lawsuit(models.Model):
     firs_settled_date = fields.Date('Settled date')
     # 其他信息
     firs_other_info = fields.Text('Other info')
+    # 举证截止日期
+    firs_quote_close_date = fields.Date('Quote close date')
+    # 鉴定机构
+    firs_ident_org = fields.Char('Identity organization')
 
     ## 附件
     # 立案资料
