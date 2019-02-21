@@ -1,7 +1,8 @@
 <odoo>
   <data>
     <!-- Top menu item -->
-    <menuitem name="Lawsuit Management" id="sce_lawsuit.menu_root" groups="sce_lawsuit.lawsuit_user"/>
+    <!-- 修改了属性groups的配置,增加了admin&manager　19/2/20 -->
+    <menuitem name="Lawsuit Management" id="sce_lawsuit.menu_root" groups="sce_lawsuit.lawsuit_user,sce_lawsuit.lawsuit_admin,sce_lawsuit.lawsuit_manager"/>
     <!-- menu categories -->
     <menuitem name="SCE Coperation" id="sce_lawsuit.menu_1" parent="sce_lawsuit.menu_root"/>
     <menuitem name="Configuration" id="sce_lawsuit.menu_2"

@@ -13,15 +13,18 @@
       <!--<field name="view_mode">tree,form</field>-->
     <!--</record>-->
 
+
     <record model="ir.actions.act_window" id="sce_lawsuit.action_window_all">
       <field name="name">Lawsuit</field>
       <field name="res_model">sce_lawsuit.lawsuit</field>
       <field name="view_mode">tree,form</field>
     </record>
 
+    <!-- 增加了domain了 uid代替user.id 19/2/20 -->
     <record model="ir.actions.act_window" id="sce_lawsuit.action_window_add">
       <field name="name">action_window_submit</field>
       <field name="res_model">sce_lawsuit.lawsuit</field>
+      <field name="domain">[('response_user_id','=',uid)]</field>
       <field name="view_mode">tree,form</field>
     </record>
 

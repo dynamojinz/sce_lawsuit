@@ -9,17 +9,19 @@
         <record model="res.groups" id="lawsuit_manager">
             <field name="name">Lawsuit / Manager</field>
         </record>
-        <record id="only_edit_reponsible_lawsuit" model="ir.rule">
-            <field name="name">Only responseble person can edit</field>
-            <field name="model_id" ref="model_sce_lawsuit_lawsuit"/>
-            <field name="groups" eval="[(4, ref('sce_lawsuit.lawsuit_user'))]"/>
-            <field name="perm_read" eval="1"/>
-            <field name="perm_write" eval="1"/>
-            <field name="perm_create" eval="1"/>
-            <field name="perm_unlink" eval="1"/>
-            <field name="domain_force">
-                [('response_user_id','=',user.id)]
-            </field>
-        </record>
+        <!-- 以下内容　rule规则　　有没有都行 19/2/20 -->
+        <!--<record id="only_edit_reponsible_lawsuit" model="ir.rule">-->
+            <!--<field name="name">Only responseble person can edit</field>-->
+            <!--<field name="model_id" ref="model_sce_lawsuit_lawsuit"/>-->
+            <!--<field name="groups" eval="[(4, ref('sce_lawsuit.lawsuit_user'))]"/>-->
+            <!--<field name="perm_read" eval="1"/>-->
+            <!--<field name="perm_write" eval="1"/>-->
+            <!--<field name="perm_create" eval="1"/>-->
+            <!--<field name="perm_unlink" eval="1"/>-->
+            <!--<field name="domain_force">-->
+                <!--[('response_user_id','=',user.id)]-->
+            <!--</field>-->
+        <!--</record>-->
+
     </data>
 </odoo>
